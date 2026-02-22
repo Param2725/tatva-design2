@@ -1,0 +1,185 @@
+import { useState, useEffect } from "react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
+
+export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Services", href: "#services" },
+    { label: "Process", href: "#process" },
+    { label: "Contact", href: "#contact" },
+  ];
+
+  const scrollTo = (id: string) => {
+    const el = document.querySelector(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+    setMobileOpen(false);
+  };
+
+  return (
+    <header
+      style={{
+        background: isScrolled ? "rgba(3,4,94,0.97)" : "#03045e",
+        backdropFilter: isScrolled ? "blur(12px)" : "none",
+        boxShadow: isScrolled ? "0 2px 20px rgba(0,0,0,0.25)" : "none",
+        transition: "all 0.3s ease",
+      }}
+      className="fixed top-0 left-0 right-0 z-50"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-18">
+          {/* Logo */}
+          <button
+            onClick={() => scrollTo("#home")}
+            className="flex items-center gap-2.5 flex-shrink-0"
+          >
+            <div
+              className="w-9 h-9 rounded-lg flex items-center justify-center"
+              style={{ background: "linear-gradient(135deg, #0077b6, #00b4d8)" }}
+            >
+              <span className="text-white text-sm" style={{ fontWeight: 700, letterSpacing: "-0.5px" }}>TC</span>
+            </div>
+            <div className="flex flex-col items-start">
+              <span className="text-white leading-tight" style={{ fontSize: "15px", fontWeight: 700, letterSpacing: "0.2px" }}>
+                Tatva Consultancy
+              </span>
+              <span className="leading-tight" style={{ fontSize: "10px", color: "#48cae4", fontWeight: 500, letterSpacing: "0.5px" }}>
+                BUSINESS SOLUTIONS
+              </span>
+            </div>
+          </button>
+
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <button
+                key={link.label}
+                onClick={() => scrollTo(link.href)}
+                className="px-4 py-2 rounded-md text-sm transition-all duration-200"
+                style={{
+                  color: "rgba(255,255,255,0.85)",
+                  fontWeight: 500,
+                }}
+                onMouseEnter={(e) => {
+                  (e.target as HTMLElement).style.color = "#48cae4";
+                  (e.target as HTMLElement).style.background = "rgba(255,255,255,0.08)";
+                  (e.target as HTMLElement).style.borderBottom = "2px solid #f77f00";
+                }}
+                onMouseLeave={(e) => {
+                  (e.target as HTMLElement).style.color = "rgba(255,255,255,0.85)";
+                  (e.target as HTMLElement).style.background = "transparent";
+                  (e.target as HTMLElement).style.borderBottom = "2px solid transparent";
+                }}
+              >
+                {link.label}
+              </button>
+            ))}
+          </nav>
+
+          {/* CTA */}
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href="tel:+919876543210"
+              className="flex items-center gap-2 px-3 py-2 rounded-md transition-all duration-200"
+              style={{ color: "#48cae4", fontSize: "13px", fontWeight: 600 }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.background = "rgba(72,202,228,0.1)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.background = "transparent";
+              }}
+            >
+              <Phone size={14} />
+              +91 98765 43210
+            </a>
+            <button
+              onClick={() => scrollTo("#contact")}
+              className="px-5 py-2 rounded-lg text-white text-sm transition-all duration-200"
+              style={{
+                background: "#f77f00",
+                fontWeight: 600,
+                boxShadow: "0 2px 8px rgba(247,127,0,0.4)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.background = "#d65a00";
+                (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.background = "#f77f00";
+                (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+              }}
+            >
+              Get Free Consultation
+            </button>
+          </div>
+
+          {/* Mobile Toggle */}
+          <button
+            className="lg:hidden p-2 rounded-md"
+            style={{ color: "white" }}
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div
+          className="lg:hidden border-t"
+          style={{ borderColor: "rgba(255,255,255,0.1)", background: "#03045e" }}
+        >
+          <div className="px-4 py-4 flex flex-col gap-1">
+            {navLinks.map((link) => (
+              <button
+                key={link.label}
+                onClick={() => scrollTo(link.href)}
+                className="text-left px-4 py-3 rounded-lg text-sm"
+                style={{
+                  color: "rgba(255,255,255,0.9)",
+                  fontWeight: 500,
+                }}
+              >
+                {link.label}
+              </button>
+            ))}
+            <div
+              className="mt-3 pt-3 flex flex-col gap-3"
+              style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}
+            >
+              <a
+                href="tel:+919876543210"
+                className="flex items-center gap-2 px-4 py-3 rounded-lg"
+                style={{ color: "#48cae4", fontWeight: 600, background: "rgba(72,202,228,0.1)" }}
+              >
+                <Phone size={16} />
+                +91 98765 43210
+              </a>
+              <button
+                onClick={() => scrollTo("#contact")}
+                className="px-4 py-3 rounded-lg text-white text-center text-sm"
+                style={{
+                  background: "#f77f00",
+                  fontWeight: 600,
+                }}
+              >
+                Get Free Consultation
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+}
