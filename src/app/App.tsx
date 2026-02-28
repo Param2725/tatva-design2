@@ -1,6 +1,6 @@
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
-import { ImageCarousel } from "./components/ImageCarousel";
+import { PremiumCarousel } from "./components/PremiumCarousel";
 import { ClientTicker } from "./components/ClientTicker";
 import { Services } from "./components/Services";
 import { About } from "./components/About";
@@ -25,7 +25,7 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <ImageCarousel />
+        <PremiumCarousel />
         <ClientTicker />
         <Services />
         <About />
