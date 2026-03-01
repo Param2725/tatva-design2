@@ -15,30 +15,35 @@ const carouselData = [
     {
         id: 1,
         src: "/carousel/business-registration.png",
+        mobileSrc: "/carousel/mobile/business-registration.png",
         alt: "Business Registration Services",
         seoText: "Complete business registration services from Private Limited Company to OPC and LLP."
     },
     {
         id: 2,
         src: "/carousel/trademark.png",
+        mobileSrc: "/carousel/mobile/trademark.png",
         alt: "Trademark Registration Process",
         seoText: "Streamlined 6-step trademark registration process to protect your brand identity."
     },
     {
         id: 3,
         src: "/carousel/iso.png",
+        mobileSrc: "/carousel/mobile/iso.png",
         alt: "ISO & Compliance Certifications",
         seoText: "Comprehensive ISO and compliance certifications for quality and security management."
     },
     {
         id: 4,
         src: "/carousel/gem.png",
+        mobileSrc: "/carousel/mobile/gem.png",
         alt: "GeM Registration Online Service Provider",
         seoText: "End-to-end GeM portal registration and online service provider solutions."
     },
     {
         id: 5,
         src: "/carousel/iem.png",
+        mobileSrc: "/carousel/mobile/iem.png",
         alt: "One Stop Solution For IEM Registration",
         seoText: "One-stop solution for complete IEM registration and continuous expert support."
     }
@@ -73,18 +78,17 @@ export function PremiumCarousel() {
     }, [currentIndex, isPaused, nextSlide]);
 
     return (
-        <section className="w-full py-12 bg-slate-50 flex justify-center">
+        <section className="w-full pb-12 bg-[#f0f9ff] flex justify-center">
             <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
                 {/* 
           Carousel Container: 
-          - Aspect ratio maintained (16/7 or standard wide)
+          - Aspect ratio maintained responsively (square-ish on mobile, standard wide on desktop)
           - Rounded corners (16px) 
           - Subtle clean shadow 
         */}
                 <div
-                    className="relative w-full overflow-hidden rounded-[16px] bg-[#0a192f] shadow-[0_8px_30px_rgb(0,0,0,0.12)] group"
-                    style={{ aspectRatio: '16/7', minHeight: '300px' }}
+                    className="relative w-full mx-auto max-w-[420px] sm:max-w-none overflow-hidden rounded-[16px] bg-transparent sm:bg-[#0a192f] shadow-[0_8px_30px_rgb(0,0,0,0.12)] group aspect-[9/16] sm:aspect-video lg:aspect-[16/7] min-h-[250px] sm:min-h-[400px]"
                     onMouseEnter={() => setIsPaused(true)}
                     onMouseLeave={() => setIsPaused(false)}
                     onFocus={() => setIsPaused(true)}
@@ -109,31 +113,31 @@ export function PremiumCarousel() {
                                 aria-hidden={!isActive}
                             >
                                 {/* 
-                  Lazy load all images except the first one for performance
-                  Ensure images cover the area without distortion 
+                  Responsive Images using <picture>
+                  Automatically serves mobile-optimized vertical images to phones to save bandwidth and fit the aspect ratio perfectly
                 */}
-                                <img
-                                    src={slide.src}
-                                    alt={slide.alt}
-                                    loading={index === 0 ? "eager" : "lazy"}
-                                    className="w-full h-full object-cover"
-                                />
+                                <picture>
+                                    <source media="(max-width: 639px)" srcSet={slide.mobileSrc} />
+                                    <source media="(min-width: 640px)" srcSet={slide.src} />
+                                    <img
+                                        src={slide.src}
+                                        alt={slide.alt}
+                                        loading={index === 0 ? "eager" : "lazy"}
+                                        className="w-full h-full object-cover object-center"
+                                    />
+                                </picture>
 
                                 {/* 
-                  Accessibility & Visuals:
-                  Dark gradient overlay strictly at the bottom to make SEO text "pop" 
-                  while preserving image brightness above.
+                  SEO Text Overlay (Bottom-Left)
+                  Visually hidden on mobile (sr-only) so it doesn't block the image, but kept for Googlebot/Screen Readers.
+                  On desktop, a strong text-shadow ensures legibility without darkening the image with a gradient overlay.
                 */}
-                                <div
-                                    className="absolute bottom-0 left-0 w-full h-3/5 bg-gradient-to-t from-[#020617]/90 via-[#020617]/40 to-transparent"
-                                    aria-hidden="true"
-                                />
-
-                                {/* SEO Text Overlay (Bottom-Left) */}
-                                <div className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 max-w-[85%] sm:max-w-[70%] z-20">
+                                <div className="sr-only sm:not-sr-only sm:absolute sm:bottom-8 sm:left-8 sm:max-w-[70%] sm:z-20">
                                     <p
-                                        className="text-white text-sm sm:text-base md:text-lg font-medium leading-relaxed tracking-wide drop-shadow-lg"
-                                        style={{ textShadow: "0px 2px 4px rgba(0,0,0,0.8)" }}
+                                        className="text-white sm:text-lg md:text-xl font-semibold leading-normal tracking-wide drop-shadow-2xl"
+                                        style={{
+                                            textShadow: "0px 2px 4px rgba(0,0,0,0.9), 0px 4px 12px rgba(0,0,0,0.6)"
+                                        }}
                                     >
                                         {slide.seoText}
                                     </p>

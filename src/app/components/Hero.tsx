@@ -23,10 +23,9 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden"
+      className="relative overflow-hidden pt-20 lg:pt-32"
       style={{
         background: "linear-gradient(135deg, #03045e 0%, #023e8a 50%, #0077b6 100%)",
-        paddingTop: "96px",
       }}
     >
       {/* Background Pattern */}
@@ -50,7 +49,7 @@ export function Hero() {
         </svg>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 lg:pb-28">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div>
