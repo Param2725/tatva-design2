@@ -1,79 +1,156 @@
-import { ArrowRight, Building2, FileText, Award, Fingerprint, UtensilsCrossed, Factory } from "lucide-react";
+import {
+  ArrowRight,
+  Building2,
+  FileText,
+  Award,
+  Fingerprint,
+  Factory,
+  Rocket,
+  ShoppingCart,
+  ShieldCheck,
+  Briefcase,
+  Landmark,
+  Cog,
+  ChevronLeft,
+  ChevronRight
+} from "lucide-react";
 import { useState } from "react";
 
 const services = [
+  // SET 1
   {
     icon: Building2,
-    title: "Company Registration",
+    title: "COMPANY REGISTRATION",
     shortTitle: "Company",
     badge: "Most Popular",
     badgeColor: "#f77f00",
-    description:
-      "Register your Private Limited, LLP, OPC, or Public Limited company with MCA. Includes DIN, DSC, name approval, MOA/AOA drafting, and Certificate of Incorporation.",
-    features: ["Private Limited Company", "LLP Registration", "One Person Company", "Partnership Firm"],
+    description: "Register your Private Limited, LLP, OPC, or Public Limited company with MCA. Includes DIN, DSC, name approval, MOA/AOA, and Incorporation.",
+    features: ["Private Limited", "LLP Registration", "One Person Company", "Partnership"],
     timeline: "5–7 Working Days",
     starting: "₹4,999",
   },
   {
-    icon: FileText,
-    title: "GST Registration",
-    shortTitle: "GST",
-    badge: "Mandatory",
+    icon: Rocket,
+    title: "START UP INDIA",
+    shortTitle: "Startup",
+    badge: "Growth",
     badgeColor: "#f77f00",
-    description:
-      "Get your GSTIN quickly and stay fully compliant. We handle GST registration, filing, returns, and advisory for businesses of all sizes across India.",
-    features: ["GST Registration", "Monthly/Quarterly Filing", "GST Returns (GSTR-1/3B)", "GST Advisory"],
-    timeline: "2–3 Working Days",
+    description: "Navigate DPIIT recognition to get tax exemptions, easier compliance, fast-tracking of patent applications, and funding support.",
+    features: ["DPIIT Recognition", "Tax Exemption (80IAC)", "Angel Tax Exemption", "Patent Rebates"],
+    timeline: "3–5 Working Days",
+    starting: "₹3,999",
+  },
+  {
+    icon: Factory,
+    title: "MSME - UDYAM REGISTRATION",
+    shortTitle: "MSME",
+    badge: "Govt Benefits",
+    badgeColor: "#f77f00",
+    description: "Register under Udyam (MSME) to unlock government subsidies, priority sector lending, tax concessions, and prompt payment protection.",
+    features: ["Udyam Certificate", "NIC Code Selection", "Subsidy Eligibility", "Priority Lending"],
+    timeline: "1–2 Working Days",
     starting: "₹999",
   },
   {
-    icon: Award,
-    title: "ISO Certification",
-    shortTitle: "ISO",
-    badge: "Build Trust",
-    badgeColor: "#f77f00",
-    description:
-      "Achieve globally recognized ISO certifications that enhance your business credibility with clients, government tenders, and international partners.",
-    features: ["ISO 9001 (Quality)", "ISO 14001 (Environment)", "ISO 45001 (Safety)", "ISO 27001 (IT Security)"],
-    timeline: "15–30 Working Days",
-    starting: "₹9,999",
-  },
-  {
     icon: Fingerprint,
-    title: "Trademark Registration",
+    title: "TRADEMARK - LOGO",
     shortTitle: "Trademark",
     badge: "Protect Brand",
     badgeColor: "#f77f00",
-    description:
-      "Safeguard your brand name, logo, and identity with a registered trademark under the Trade Marks Act. Prevent misuse and protect intellectual property.",
-    features: ["TM Application Filing", "Trademark Search", "Opposition Handling", "Renewal Services"],
+    description: "Safeguard your brand name, logo, and intellectual identity with a registered trademark. Prevent misuse and stand out in the market.",
+    features: ["TM Application", "Logo Protection", "Objection Handling", "Brand Advisory"],
     timeline: "18–24 Months",
     starting: "₹6,999",
   },
   {
-    icon: UtensilsCrossed,
-    title: "FSSAI License",
-    shortTitle: "FSSAI",
-    badge: "Food Business",
+    icon: ShoppingCart,
+    title: "GEM REGISTRATION",
+    shortTitle: "GeM",
+    badge: "Tenders",
     badgeColor: "#f77f00",
-    description:
-      "Mandatory for all food businesses in India. We help you obtain FSSAI Basic Registration, State License, or Central License based on your business scale.",
-    features: ["Basic Registration", "State License", "Central License", "License Renewal"],
-    timeline: "7–15 Working Days",
-    starting: "₹2,499",
+    description: "Register as a seller on the Government e-Marketplace (GeM) to participate in direct government procurement and national tenders.",
+    features: ["Seller Registration", "Vendor Assessment", "Catalogue Management", "Tender Bidding"],
+    timeline: "2–4 Working Days",
+    starting: "₹1,999",
   },
   {
-    icon: Factory,
-    title: "MSME Registration",
-    shortTitle: "MSME",
-    badge: "Govt Benefits",
+    icon: FileText,
+    title: "GST REGISTRATION",
+    shortTitle: "GST",
+    badge: "Mandatory",
     badgeColor: "#f77f00",
-    description:
-      "Register under Udyam (MSME) to unlock government subsidies, priority sector lending, tax concessions, and protection under the MSMED Act.",
-    features: ["Udyam Registration", "Udyog Aadhaar", "MSME Certificate", "Subsidy Advisory"],
-    timeline: "1–2 Working Days",
-    starting: "₹499",
+    description: "Get your GSTIN quickly and stay fully compliant. We handle GST registration, profile updates, filing, and advisory for all businesses.",
+    features: ["GSTIN Allotment", "State/Central Level", "E-way Bill Setup", "LUT Filing"],
+    timeline: "2–3 Working Days",
+    starting: "₹1,499",
   },
+  // SET 2
+  {
+    icon: Award,
+    title: "ISO - CE - GMP CERTIFICATE",
+    shortTitle: "ISO/CE",
+    badge: "Global Standard",
+    badgeColor: "#f77f00",
+    description: "Achieve globally recognized certifications like ISO 9001, CE Mark, and GMP to enhance business credibility, quality control, and tender eligibility.",
+    features: ["ISO 9001:2015", "CE Marking", "GMP Certification", "Quality Audits"],
+    timeline: "7–15 Working Days",
+    starting: "₹8,999",
+  },
+  {
+    icon: ShieldCheck,
+    title: "NSIC - CSPO CERTIFICATE",
+    shortTitle: "NSIC",
+    badge: "Govt Tenders",
+    badgeColor: "#f77f00",
+    description: "Get NSIC registration under Central Government Stores Purchase Programme (CSPO) for EMD exemption and tender participation benefits.",
+    features: ["Single Point Reg", "EMD Exemption", "Tender Fee Waiver", "Credit Support"],
+    timeline: "15–20 Working Days",
+    starting: "₹12,999",
+  },
+  {
+    icon: Briefcase,
+    title: "IEM REGISTRATION",
+    shortTitle: "IEM",
+    badge: "Industrial",
+    badgeColor: "#f77f00",
+    description: "Filing Industrial Entrepreneur Memorandum (IEM) for large scale industries exempted from industrial licensing provisions.",
+    features: ["Part A (Intent)", "Part B (Commencement)", "SIA Registration", "Amendment of IEM"],
+    timeline: "3–5 Working Days",
+    starting: "₹4,999",
+  },
+  {
+    icon: Building2,
+    title: "R&B APPROVAL",
+    shortTitle: "R&B",
+    badge: "Infrastructure",
+    badgeColor: "#f77f00",
+    description: "Specialized assistance for Roads & Building (R&B) department contractor registrations, contractor class upgrades, and tender eligibility.",
+    features: ["Class Registration", "Document Prep", "Renewal & Upgrade", "Govt Liaison"],
+    timeline: "20–30 Working Days",
+    starting: "Custom Price",
+  },
+  {
+    icon: Landmark,
+    title: "LOANS & SUBSIDY",
+    shortTitle: "Finance",
+    badge: "Funding",
+    badgeColor: "#f77f00",
+    description: "Expert consultancy for project financing, SME loans, working capital, and specialized state/central government subsidy schemes.",
+    features: ["Project Reports", "CMA Data Prep", "CGFMSE Loans", "State Subsidies"],
+    timeline: "Variable",
+    starting: "Custom Price",
+  },
+  {
+    icon: Cog,
+    title: "FACTORY ACT- GPCB - BIS, IBR, EIL, CREDIT RATING ETC",
+    shortTitle: "Compliance",
+    badge: "Operations",
+    badgeColor: "#f77f00",
+    description: "End-to-end operational compliance including Factory Act licensing, GPCB pollution boards, BIS, IBR, EIL, and Credit Rating assistance.",
+    features: ["Factory License", "GPCB CTE/CCA", "BIS Certification", "Credit Rating Prep"],
+    timeline: "Variable",
+    starting: "Custom Price",
+  }
 ];
 
 function ServiceCard({ service }: { service: (typeof services)[0] }) {
@@ -199,6 +276,27 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
 }
 
 export function Services() {
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(services.length / itemsPerPage);
+
+  const displayedServices = services.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
+  const handleNext = () => {
+    if (currentPage < totalPages - 1) {
+      setCurrentPage((prev) => prev + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentPage > 0) {
+      setCurrentPage((prev) => prev - 1);
+    }
+  };
+
   return (
     <section id="services" style={{ background: "#f0f9ff", paddingTop: "80px", paddingBottom: "80px" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -241,31 +339,49 @@ export function Services() {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => (
+          {displayedServices.map((service) => (
             <ServiceCard key={service.title} service={service} />
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-12">
-          <p style={{ color: "#6b7280", fontSize: "14px", marginBottom: "12px" }}>
-            Don't see what you need? We offer many more compliance services.
-          </p>
+        {/* Pagination Controls */}
+        <div className="flex items-center justify-center gap-6 mt-14">
           <button
-            onClick={() => {
-              const el = document.querySelector("#contact");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="inline-flex items-center gap-2 px-7 py-3 rounded-xl text-white"
-            style={{
-              background: "linear-gradient(135deg, #03045e, #0077b6)",
-              fontWeight: 700,
-              fontSize: "14px",
-              boxShadow: "0 4px 20px rgba(3,4,94,0.2)",
-            }}
+            onClick={handlePrev}
+            disabled={currentPage === 0}
+            className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 ${currentPage === 0
+              ? "bg-slate-200 text-slate-400 cursor-not-allowed opacity-50"
+              : "bg-white text-[#03045e] shadow-md hover:shadow-lg hover:-translate-y-1 hover:text-[#f77f00]"
+              }`}
+            style={{ border: "1px solid rgba(0,0,0,0.05)" }}
+            aria-label="Previous Services"
           >
-            Explore All Services
-            <ArrowRight size={15} />
+            <ChevronLeft size={24} />
+          </button>
+
+          <div className="flex gap-2">
+            {Array.from({ length: totalPages }).map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentPage(idx)}
+                className={`h-2.5 rounded-full transition-all duration-300 ${currentPage === idx ? "bg-[#f77f00] w-8" : "bg-slate-300 w-2.5 hover:bg-slate-400"
+                  }`}
+                aria-label={`Go to page ${idx + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={handleNext}
+            disabled={currentPage === totalPages - 1}
+            className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 ${currentPage === totalPages - 1
+              ? "bg-slate-200 text-slate-400 cursor-not-allowed opacity-50"
+              : "bg-white text-[#03045e] shadow-md hover:shadow-lg hover:-translate-y-1 hover:text-[#f77f00]"
+              }`}
+            style={{ border: "1px solid rgba(0,0,0,0.05)" }}
+            aria-label="Next Services"
+          >
+            <ChevronRight size={24} />
           </button>
         </div>
       </div>
