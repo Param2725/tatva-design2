@@ -1,20 +1,4 @@
-const clients = [
-  "Adani Wilmar Ltd",
-  "Zydus Lifesciences",
-  "Torrent Pharma",
-  "Arvind Ltd",
-  "Amul (GCMMF)",
-  "Astral Pipes",
-  "Sintex Industries",
-  "Cadila Healthcare",
-  "GNFC",
-  "Welspun Group",
-  "Nirma Ltd",
-  "Lakhani Group",
-  "Intas Pharma",
-  "Elecon Engineering",
-  "AIA Engineering",
-];
+const logos = Array.from({ length: 16 }, (_, i) => `/client/logos/logo${i + 1}.png`);
 
 export function ClientTicker() {
   return (
@@ -77,8 +61,8 @@ export function ClientTicker() {
             display: "flex",
             alignItems: "center",
             width: "max-content",
-            gap: "24px",
-            paddingLeft: "24px",
+            gap: "40px",
+            paddingLeft: "40px",
           }}
         >
           {/* Render the list twice for seamless loop */}
@@ -88,49 +72,41 @@ export function ClientTicker() {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "24px",
+                gap: "40px",
                 flexShrink: 0,
               }}
             >
-              {clients.map((name, i) => (
+              {logos.map((src, i) => (
                 <div
                   key={`${setIndex}-${i}`}
-                  className="ticker-card"
                   style={{
                     background: "#ffffff",
                     border: "1.5px solid rgba(3, 4, 94, 0.1)",
-                    borderRadius: "10px",
-                    padding: "14px 28px",
+                    borderRadius: "12px",
+                    padding: "16px 24px",
                     flexShrink: 0,
                     cursor: "default",
-                    transition:
-                      "border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                     boxShadow: "0 2px 8px rgba(3, 4, 94, 0.06)",
                   }}
-                  onMouseEnter={(e) => {
-                    const el = e.currentTarget;
-                    el.style.borderColor = "rgba(0, 119, 182, 0.4)";
-                    el.style.boxShadow = "0 4px 16px rgba(0, 119, 182, 0.12)";
-                    el.style.transform = "translateY(-2px)";
-                  }}
-                  onMouseLeave={(e) => {
-                    const el = e.currentTarget;
-                    el.style.borderColor = "rgba(3, 4, 94, 0.1)";
-                    el.style.boxShadow = "0 2px 8px rgba(3, 4, 94, 0.06)";
-                    el.style.transform = "translateY(0)";
-                  }}
                 >
-                  <span
+                  <img
+                    src={src}
+                    alt={`Client logo ${i + 1}`}
+                    width={150}
+                    height={75}
+                    loading="lazy"
+                    draggable={false}
                     style={{
-                      color: "#03045e",
-                      fontWeight: 700,
-                      fontSize: "clamp(0.875rem, 1.5vw, 1.05rem)",
-                      whiteSpace: "nowrap",
-                      letterSpacing: "0.01em",
+                      width: "150px",
+                      height: "75px",
+                      objectFit: "contain",
+                      display: "block",
+                      userSelect: "none",
                     }}
-                  >
-                    {name}
-                  </span>
+                  />
                 </div>
               ))}
             </div>

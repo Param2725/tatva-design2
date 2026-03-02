@@ -41,22 +41,14 @@ export function Header() {
           {/* Logo */}
           <button
             onClick={() => scrollTo("#home")}
-            className="flex items-center gap-2.5 flex-shrink-0"
+            className="flex items-center flex-shrink-0"
           >
-            <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center"
-              style={{ background: "linear-gradient(135deg, #0077b6, #00b4d8)" }}
-            >
-              <span className="text-white text-sm" style={{ fontWeight: 700, letterSpacing: "-0.5px" }}>TC</span>
-            </div>
-            <div className="flex flex-col items-start">
-              <span className="text-white leading-tight" style={{ fontSize: "15px", fontWeight: 700, letterSpacing: "0.2px" }}>
-                Tatva Consultancy
-              </span>
-              <span className="leading-tight" style={{ fontSize: "10px", color: "#48cae4", fontWeight: 500, letterSpacing: "0.5px" }}>
-                BUSINESS SOLUTIONS
-              </span>
-            </div>
+            <img
+              src="/logo.png"
+              alt="Tatva Consultancy Services"
+              className="h-10 sm:h-12 w-auto"
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
           </button>
 
           {/* Desktop Nav */}

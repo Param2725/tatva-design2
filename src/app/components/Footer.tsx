@@ -43,21 +43,13 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             {/* Logo */}
-            <div className="flex items-center gap-2.5 mb-5">
-              <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center"
-                style={{ background: "linear-gradient(135deg, #0077b6, #00b4d8)" }}
-              >
-                <span className="text-white" style={{ fontWeight: 800, fontSize: "14px" }}>TC</span>
-              </div>
-              <div>
-                <p style={{ color: "white", fontWeight: 800, fontSize: "16px", lineHeight: 1.2 }}>
-                  Tatva Consultancy
-                </p>
-                <p style={{ color: "#48cae4", fontSize: "10px", fontWeight: 600, letterSpacing: "0.5px" }}>
-                  BUSINESS SOLUTIONS
-                </p>
-              </div>
+            <div className="mb-5">
+              <img
+                src="/logo.png"
+                alt="Tatva Consultancy Services"
+                className="h-12 sm:h-14 w-auto"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
             </div>
 
             <p
