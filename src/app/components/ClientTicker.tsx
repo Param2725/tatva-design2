@@ -1,4 +1,4 @@
-const logos = Array.from({ length: 16 }, (_, i) => `/client/logos/logo${i + 1}.png`);
+const logos = Array.from({ length: 21 }, (_, i) => `/client/logos/logo${i + 1}.png`);
 
 export function ClientTicker() {
   return (
@@ -95,13 +95,13 @@ export function ClientTicker() {
                   <img
                     src={src}
                     alt={`Client logo ${i + 1}`}
-                    width={150}
-                    height={75}
+                    width={200}
+                    height={100}
                     loading="lazy"
                     draggable={false}
                     style={{
-                      width: "150px",
-                      height: "75px",
+                      width: "200px",
+                      height: "100px",
                       objectFit: "contain",
                       display: "block",
                       userSelect: "none",

@@ -47,7 +47,6 @@ export function Header() {
               src="/logo.png"
               alt="Tatva Consultancy Services"
               className="h-10 sm:h-12 w-auto"
-              style={{ filter: "brightness(0) invert(1)" }}
             />
           </button>
 

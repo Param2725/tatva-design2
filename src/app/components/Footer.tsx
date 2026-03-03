@@ -48,7 +48,6 @@ export function Footer() {
                 src="/logo.png"
                 alt="Tatva Consultancy Services"
                 className="h-12 sm:h-14 w-auto"
-                style={{ filter: "brightness(0) invert(1)" }}
               />
             </div>
 
