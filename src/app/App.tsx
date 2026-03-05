@@ -4,6 +4,7 @@ import { Footer } from "./components/Footer";
 import { FloatingCTA } from "./components/FloatingCTA";
 import Home from "./pages/Home";
 import CompanyRegistration from "./pages/services/CompanyRegistration";
+import StartupIndiaRegistration from "./pages/services/StartupIndiaRegistration";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services/company-registration" element={<CompanyRegistration />} />
+        <Route path="/services/startup-india-registration" element={<StartupIndiaRegistration />} />
       </Routes>
       <Footer />
       <FloatingCTA />

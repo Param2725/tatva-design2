@@ -40,7 +40,7 @@ const services = [
     features: ["DPIIT Recognition", "Tax Exemption (80IAC)", "Angel Tax Exemption", "Patent Rebates"],
     timeline: "3–5 Working Days",
     starting: "₹3,999",
-    href: "#contact"
+    href: "/services/startup-india-registration"
   },
   {
     icon: Factory,
