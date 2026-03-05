@@ -26,7 +26,7 @@ const steps = [
     icon: Send,
     title: "Filing & Submission",
     description:
-      "Our professionals prepare and file all applications with the relevant authorities — MCA, GSTIN, Trade Marks Registry, or FSSAI.",
+      "Our professionals prepare and file all applications with the relevant authorities — MCA, GSTIN, Trade Marks Registry, and more.",
     details: ["Government portal filing", "Application tracking", "Query resolution", "Real-time status updates"],
     color: "#00b4d8",
     lightColor: "#e0faf9",
@@ -282,7 +282,7 @@ export function Process() {
               <ArrowRight size={16} />
             </button>
             <a
-              href="tel:+919876543210"
+              href="tel:+919825310954"
               className="flex items-center gap-2 px-7 py-3.5 rounded-xl"
               style={{
                 background: "rgba(255,255,255,0.12)",
@@ -293,7 +293,7 @@ export function Process() {
                 textDecoration: "none",
               }}
             >
-              📞 Call Now: +91 98765 43210
+              📞 Call Now: +91-9825310954
             </a>
           </div>
         </div>

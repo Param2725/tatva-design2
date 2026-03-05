@@ -95,7 +95,7 @@ export function Header() {
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:+919876543210"
+              href="tel:+919825310954"
               className="flex items-center gap-2 px-3 py-2 rounded-md transition-all duration-200"
               style={{ color: "#48cae4", fontSize: "13px", fontWeight: 600 }}
               onMouseEnter={(e) => {
@@ -106,7 +106,7 @@ export function Header() {
               }}
             >
               <Phone size={14} />
-              +91 98765 43210
+              +91-9825310954
             </a>
             <button
               onClick={() => handleNavClick("#contact")}
@@ -165,12 +165,12 @@ export function Header() {
               style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}
             >
               <a
-                href="tel:+919876543210"
+                href="tel:+919825310954"
                 className="flex items-center gap-2 px-4 py-3 rounded-lg"
                 style={{ color: "#48cae4", fontWeight: 600, background: "rgba(72,202,228,0.1)" }}
               >
                 <Phone size={16} />
-                +91 98765 43210
+                +91-9825310954
               </a>
               <button
                 onClick={() => handleNavClick("#contact")}

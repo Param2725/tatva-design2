@@ -25,7 +25,7 @@ export function About() {
     "Regular updates at every step of the process",
     "Post-registration compliance support included",
     "Secure digital document handling",
-    "Offices in Mumbai, Delhi, Bangalore & Chennai",
+    "Based in Ahmedabad, Gujarat",
   ];
 
   return (
@@ -65,7 +65,7 @@ export function About() {
                 {[
                   { value: "10+", label: "Years" },
                   { value: "50+", label: "Experts" },
-                  { value: "4", label: "Cities" },
+                  { value: "1", label: "City" },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center">
                     <p
@@ -86,38 +86,36 @@ export function About() {
               </div>
             </div>
 
-            {/* Floating Cards */}
-            {highlights.map((h, i) => {
-              const Icon = h.icon;
-              const positions = [
-                "top-4 -right-4",
-                "-bottom-4 left-8",
-                "top-1/2 -right-6",
-              ];
-              return (
-                <div
-                  key={h.title}
-                  className={`absolute ${positions[i]} flex items-center gap-3 px-4 py-3 rounded-xl`}
-                  style={{
-                    background: "white",
-                    boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
-                    border: "1px solid #e0f2fe",
-                    display: i < 2 ? "flex" : "none",
-                  }}
-                >
+            {/* Badges Below Card */}
+            <div className="flex flex-wrap gap-4 mt-6">
+              {highlights.map((h) => {
+                const Icon = h.icon;
+                return (
                   <div
-                    className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: "#e0f2fe" }}
+                    key={h.title}
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl"
+                    style={{
+                      background: "white",
+                      boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+                      border: "1px solid #e0f2fe",
+                      flex: "1 1 auto",
+                      minWidth: "200px",
+                    }}
                   >
-                    <Icon size={18} style={{ color: "#0077b6" }} />
+                    <div
+                      className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                      style={{ background: "#e0f2fe" }}
+                    >
+                      <Icon size={18} style={{ color: "#0077b6" }} />
+                    </div>
+                    <div>
+                      <p style={{ color: "#03045e", fontSize: "13px", fontWeight: 700 }}>{h.title}</p>
+                      <p style={{ color: "#6b7280", fontSize: "11px" }}>{h.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p style={{ color: "#03045e", fontSize: "13px", fontWeight: 700 }}>{h.title}</p>
-                    <p style={{ color: "#6b7280", fontSize: "11px" }}>{h.desc}</p>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
 
           {/* Right Content */}

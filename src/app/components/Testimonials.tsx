@@ -15,10 +15,10 @@ const testimonials = [
   {
     name: "Priya Sharma",
     role: "Co-Founder, FreshBite Foods",
-    city: "Mumbai",
-    service: "FSSAI + GST Registration",
+    city: "Ahmedabad",
+    service: "GST + Company Registration",
     rating: 5,
-    text: "We needed both FSSAI and GST registration for our food startup. Tatva handled both simultaneously and kept us updated throughout. The team is extremely knowledgeable and responsive. Highly recommended!",
+    text: "We needed both GST and company registration for our food startup. Tatva handled both simultaneously and kept us updated throughout. The team is extremely knowledgeable and responsive. Highly recommended!",
     initials: "PS",
     color: "#0096c7",
   },

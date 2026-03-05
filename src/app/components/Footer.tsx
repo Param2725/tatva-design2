@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, ArrowRight, Linkedin, Twitter, Facebook, Instagram, ExternalLink } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Twitter, Facebook, Instagram, ExternalLink } from "lucide-react";
 import { useNavigate, useLocation } from "react-router";
 
 const services = [
@@ -7,9 +7,8 @@ const services = [
   { name: "GST Registration", href: "/services/gst-registration" },
   { name: "ISO Certification", href: "/services/iso-certification" },
   { name: "Trademark Registration", href: "/services/trademark-registration" },
-  { name: "FSSAI License", href: "/services/fssai-license" },
   { name: "MSME Registration", href: "/services/msme-registration" },
-  { name: "Startup India", href: "/services/startup-india" },
+  { name: "Startup India", href: "/services/startup-india-registration" },
 ];
 
 const quickLinks = [
@@ -83,36 +82,50 @@ export function Footer() {
             {/* Contact Quick Links */}
             <div className="space-y-3 mb-6">
               <a
-                href="tel:+919876543210"
+                href="tel:+919825310954"
                 className="flex items-center gap-2.5"
                 style={{ textDecoration: "none" }}
               >
                 <Phone size={14} style={{ color: "#48cae4" }} />
-                <span style={{ color: "rgba(255,255,255,0.75)", fontSize: "13.5px" }}>+91 98765 43210</span>
+                <span style={{ color: "rgba(255,255,255,0.75)", fontSize: "13.5px" }}>+91-9825310954</span>
               </a>
               <a
-                href="mailto:hello@tatvaconsultancy.in"
+                href="mailto:info@tatvaconsultancy.in"
                 className="flex items-center gap-2.5"
                 style={{ textDecoration: "none" }}
               >
                 <Mail size={14} style={{ color: "#48cae4" }} />
-                <span style={{ color: "rgba(255,255,255,0.75)", fontSize: "13.5px" }}>hello@tatvaconsultancy.in</span>
+                <span style={{ color: "rgba(255,255,255,0.75)", fontSize: "13.5px" }}>info@tatvaconsultancy.in</span>
               </a>
-              <div className="flex items-start gap-2.5">
+              <a
+                href="mailto:helpmsme@gmail.com"
+                className="flex items-center gap-2.5"
+                style={{ textDecoration: "none" }}
+              >
+                <Mail size={14} style={{ color: "#48cae4" }} />
+                <span style={{ color: "rgba(255,255,255,0.75)", fontSize: "13.5px" }}>helpmsme@gmail.com</span>
+              </a>
+              <a
+                href="https://maps.app.goo.gl/Z2TjydDZhWUBLQxS6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2.5"
+                style={{ textDecoration: "none" }}
+              >
                 <MapPin size={14} style={{ color: "#48cae4", marginTop: "2px", flexShrink: 0 }} />
                 <span style={{ color: "rgba(255,255,255,0.75)", fontSize: "13.5px" }}>
-                  Mumbai · Delhi · Bangalore · Chennai
+                  Ahmedabad, Gujarat
                 </span>
-              </div>
+              </a>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-2.5">
               {[
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Twitter, href: "#", label: "Twitter" },
-                { icon: Facebook, href: "#", label: "Facebook" },
-                { icon: Instagram, href: "#", label: "Instagram" },
+                { icon: () => <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" /><path d="m10 15 5-3-5-3z" /></svg>, href: "https://www.youtube.com/@tatvaconsultancy1295", label: "YouTube" },
+                { icon: Twitter, href: "https://twitter.com/TatvaConsultan", label: "Twitter" },
+                { icon: Facebook, href: "https://www.facebook.com/profile.php?id=100011339424566", label: "Facebook" },
+                { icon: Instagram, href: "https://www.instagram.com/tatvaconsultancy1/?hl=en", label: "Instagram" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -279,26 +292,8 @@ export function Footer() {
       <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "12.5px" }}>
-            © 2024 Tatva Consultancy. All rights reserved. CIN: U74999MH2014PTC123456
+            © 2024 Tatva Consultancy. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
-            {["Privacy Policy", "Terms of Service", "Refund Policy"].map((link) => (
-              <a
-                key={link}
-                href="#"
-                style={{
-                  color: "rgba(255,255,255,0.45)",
-                  fontSize: "12px",
-                  textDecoration: "none",
-                  transition: "color 0.2s",
-                }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#48cae4")}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "rgba(255,255,255,0.45)")}
-              >
-                {link}
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

@@ -63,7 +63,7 @@ export function FloatingCTA() {
                 Request Callback
               </button>
               <a
-                href="tel:+919876543210"
+                href="tel:+919825310954"
                 className="flex items-center justify-center gap-2 py-2.5 rounded-xl w-full text-sm"
                 style={{
                   background: "#f0f9ff",

@@ -17,7 +17,7 @@ export function Hero() {
     "Company & LLP Registration",
     "GST & Tax Compliance",
     "Trademark & ISO Certification",
-    "FSSAI & MSME Registration",
+    "MSME & Startup India Registration",
   ];
 
   return (
