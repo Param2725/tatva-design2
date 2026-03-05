@@ -1,4 +1,28 @@
-const logos = Array.from({ length: 21 }, (_, i) => `/client/logos/logo${i + 1}.png`);
+const logos = [
+  { src: "/client/logos/aegis.png", name: "Aegis" },
+  { src: "/client/logos/ahmedabad-university.png", name: "Ahmedabad University" },
+  { src: "/client/logos/armee-infotech.png", name: "Armee Infotech" },
+  { src: "/client/logos/australian-premium-solar.png", name: "Australian Premium Solar" },
+  { src: "/client/logos/bons-light.png", name: "Bons Light" },
+  { src: "/client/logos/epic.png", name: "Epic" },
+  { src: "/client/logos/euro-premium-solar.png", name: "Euro Premium Solar" },
+  { src: "/client/logos/fujitec-express.png", name: "Fujitec Express" },
+  { src: "/client/logos/goldi-solar.png", name: "Goldi Solar" },
+  { src: "/client/logos/grainspan.png", name: "Grainspan" },
+  { src: "/client/logos/hocco.png", name: "Hocco" },
+  { src: "/client/logos/ingeco.png", name: "Ingeco" },
+  { src: "/client/logos/mediatab.png", name: "Mediatab" },
+  { src: "/client/logos/noble-electrodes.png", name: "Noble Electrodes" },
+  { src: "/client/logos/om-power-transmission.png", name: "Om Power Transmission" },
+  { src: "/client/logos/samsung.png", name: "Samsung" },
+  { src: "/client/logos/sandvik-coromant.png", name: "Sandvik Coromant" },
+  { src: "/client/logos/sardardham.png", name: "Sardardham" },
+  { src: "/client/logos/solex-energy.png", name: "Solex Energy" },
+  { src: "/client/logos/supreme.png", name: "Supreme" },
+  { src: "/client/logos/taparia-tools.png", name: "Taparia Tools" },
+  { src: "/client/logos/vachhani-furniture.png", name: "Vachhani Furniture" },
+  { src: "/client/logos/vinfast.png", name: "VinFast" },
+];
 
 export function ClientTicker() {
   return (
@@ -76,7 +100,7 @@ export function ClientTicker() {
                 flexShrink: 0,
               }}
             >
-              {logos.map((src, i) => (
+              {logos.map((logo, i) => (
                 <div
                   key={`${setIndex}-${i}`}
                   style={{
@@ -93,8 +117,8 @@ export function ClientTicker() {
                   }}
                 >
                   <img
-                    src={src}
-                    alt={`Client logo ${i + 1}`}
+                    src={logo.src}
+                    alt={logo.name}
                     width={200}
                     height={100}
                     loading="lazy"
