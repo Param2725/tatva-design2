@@ -55,7 +55,7 @@ export default function StartupIndiaRegistration() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-12 gap-12">
                         {/* Left: Text Content */}
-                        <div className="lg:col-span-7 space-y-6 text-gray-700 text-base md:text-lg leading-relaxed">
+                        <div className="lg:col-span-7 space-y-6 text-gray-700 text-base md:text-lg leading-relaxed text-justify">
                             <p>
                                 India has become one of the <strong style={{ color: "#03045e" }}>fastest-growing startup ecosystems</strong> in the world. To encourage innovation and entrepreneurship, the Government of India launched the <strong style={{ color: "#0077b6" }}>Startup India initiative</strong>. This program provides recognition, financial benefits, tax advantages, and regulatory support to eligible startups.
                             </p>
@@ -199,7 +199,7 @@ export default function StartupIndiaRegistration() {
                                     <item.icon size={28} />
                                 </div>
                                 <h3 className="text-xl font-bold mb-3" style={{ color: "#03045e" }}>{item.title}</h3>
-                                <p className="text-gray-600 leading-relaxed text-sm">{item.desc}</p>
+                                <p className="text-gray-600 leading-relaxed text-sm text-justify">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -311,7 +311,7 @@ export default function StartupIndiaRegistration() {
                                     {s.step}
                                 </div>
                                 <h3 className="text-xl font-bold mt-2 mb-3" style={{ color: "#03045e" }}>{s.title}</h3>
-                                <p className="text-gray-600 leading-relaxed text-sm">{s.desc}</p>
+                                <p className="text-gray-600 leading-relaxed text-sm text-justify">{s.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -361,10 +361,10 @@ export default function StartupIndiaRegistration() {
                             <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ color: "#03045e" }}>
                                 Why Choose Professional Startup Registration Services?
                             </h2>
-                            <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                            <p className="text-gray-600 text-lg leading-relaxed mb-6 text-justify">
                                 Startup registration involves preparing documentation, verifying eligibility, and completing online filings. Professional consultancy services can help ensure that the application is submitted correctly and that all <strong style={{ color: "#03045e" }}>compliance requirements</strong> are met.
                             </p>
-                            <p className="text-gray-600 text-lg leading-relaxed">
+                            <p className="text-gray-600 text-lg leading-relaxed text-justify">
                                 Expert assistance can <strong style={{ color: "#f77f00" }}>reduce errors</strong>, avoid delays, and help startups access available government benefits more efficiently.
                             </p>
                         </div>
@@ -382,10 +382,10 @@ export default function StartupIndiaRegistration() {
                             <h3 className="text-2xl lg:text-3xl font-bold mb-6 relative z-10" style={{ color: "#03045e" }}>
                                 Why Our Consultancy?
                             </h3>
-                            <p className="text-gray-700 leading-relaxed relative z-10 text-lg mb-4">
+                            <p className="text-gray-700 leading-relaxed relative z-10 text-lg mb-4 text-justify">
                                 Our team provides complete Startup India registration assistance, from <span style={{ color: "#0077b6", fontWeight: 600 }}>eligibility verification to DPIIT recognition</span>.
                             </p>
-                            <p className="text-gray-700 leading-relaxed relative z-10 text-lg">
+                            <p className="text-gray-700 leading-relaxed relative z-10 text-lg text-justify">
                                 We ensure your application is prepared correctly and help you <span style={{ color: "#03045e", fontWeight: 600 }}>unlock government benefits, tax exemptions, and funding opportunities</span>.
                             </p>
                         </div>

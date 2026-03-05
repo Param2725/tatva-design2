@@ -55,7 +55,7 @@ export default function CompanyRegistration() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-12 gap-12">
                         {/* Left Side: Text Content */}
-                        <div className="lg:col-span-7 space-y-6 text-gray-700 text-base md:text-lg leading-relaxed">
+                        <div className="lg:col-span-7 space-y-6 text-gray-700 text-base md:text-lg leading-relaxed text-justify">
                             <p>
                                 Starting a business begins with choosing the <strong style={{ color: "#03045e" }}>right legal structure</strong> and completing the company registration process. Registering a company not only provides legal recognition but also <strong style={{ color: "#03045e" }}>builds trust</strong> with customers, investors, and financial institutions.
                             </p>
@@ -199,7 +199,7 @@ export default function CompanyRegistration() {
                                     <type.icon size={28} />
                                 </div>
                                 <h3 className="text-xl font-bold mb-3" style={{ color: "#03045e" }}>{type.title}</h3>
-                                <p className="text-gray-600 leading-relaxed text-sm">{type.desc}</p>
+                                <p className="text-gray-600 leading-relaxed text-sm text-justify">{type.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -235,7 +235,7 @@ export default function CompanyRegistration() {
                                     {s.step}
                                 </div>
                                 <h3 className="text-xl font-bold mt-2 mb-3" style={{ color: "#03045e" }}>{s.title}</h3>
-                                <p className="text-gray-600 leading-relaxed text-sm">{s.desc}</p>
+                                <p className="text-gray-600 leading-relaxed text-sm text-justify">{s.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -312,10 +312,10 @@ export default function CompanyRegistration() {
                             <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ color: "#03045e" }}>
                                 Why Choose Professional Services?
                             </h2>
-                            <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                            <p className="text-gray-600 text-lg leading-relaxed mb-6 text-justify">
                                 Handling company registration independently can be complex due to legal requirements, documentation, and government procedures. Professional consultancy services simplify the process and reduce the risk of delays or errors.
                             </p>
-                            <p className="text-gray-600 text-lg leading-relaxed">
+                            <p className="text-gray-600 text-lg leading-relaxed text-justify">
                                 With expert guidance, businesses can complete registration quickly while ensuring full compliance with regulations. Professional support also helps entrepreneurs select the most suitable company structure based on their business goals.
                             </p>
                         </div>
@@ -333,10 +333,10 @@ export default function CompanyRegistration() {
                             <h3 className="text-2xl lg:text-3xl font-bold mb-6 relative z-10" style={{ color: "#03045e" }}>
                                 Why Our Consultancy?
                             </h3>
-                            <p className="text-gray-700 leading-relaxed max-w-md relative z-10 text-lg mb-4">
+                            <p className="text-gray-700 leading-relaxed max-w-md relative z-10 text-lg mb-4 text-justify">
                                 Our company registration consultancy helps entrepreneurs, startups, and growing businesses complete the entire registration process <span style={{ color: "#0077b6", fontWeight: 600 }}>smoothly and efficiently</span>.
                             </p>
-                            <p className="text-gray-700 leading-relaxed max-w-md relative z-10 text-lg">
+                            <p className="text-gray-700 leading-relaxed max-w-md relative z-10 text-lg text-justify">
                                 From documentation and name approval to government filing and certification, we assist you at every stage so you can <span style={{ color: "#03045e", fontWeight: 600 }}>focus on building your business</span>.
                             </p>
                         </div>
