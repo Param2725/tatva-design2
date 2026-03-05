@@ -242,61 +242,31 @@ export default function CompanyRegistration() {
                 </div>
             </section>
 
-            {/* Documents Required & Benefits */}
+            {/* Benefits */}
             <section className="py-16 lg:py-24 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-2 gap-16">
-
-                        {/* Documents */}
-                        <div>
-                            <h2 className="text-3xl font-bold mb-6" style={{ color: "#03045e" }}>
-                                Documents Required
-                            </h2>
-                            <p className="text-gray-600 text-lg mb-8">
-                                To complete the registration process, certain documents are required from directors and shareholders. Our team helps ensure that all documentation is properly prepared and submitted.
-                            </p>
-                            <ul className="space-y-4">
-                                {[
-                                    "Identity proof (PAN card, passport, etc.)",
-                                    "Address proof",
-                                    "Passport-size photographs",
-                                    "Registered office address proof",
-                                    "Utility bill or rent agreement for office address",
-                                    "No Objection Certificate from property owner (if applicable)"
-                                ].map((doc, idx) => (
-                                    <li key={idx} className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
-                                        <CheckCircle2 className="flex-shrink-0 mt-0.5" style={{ color: "#48cae4" }} size={20} />
-                                        <span className="text-gray-700 font-medium">{doc}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Benefits */}
-                        <div>
-                            <h2 className="text-3xl font-bold mb-6" style={{ color: "#03045e" }}>
-                                Benefits of Registration
-                            </h2>
-                            <p className="text-gray-600 text-lg mb-8">
-                                Registering your company offers several advantages that support long-term business growth.
-                            </p>
-                            <div className="grid sm:grid-cols-2 gap-4">
-                                {[
-                                    { title: "Legal Recognition", icon: Award, desc: "A registered company is legally recognized." },
-                                    { title: "Limited Liability", icon: ShieldCheck, desc: "Owners are protected from personal liability." },
-                                    { title: "Business Credibility", icon: Building2, desc: "Gain greater trust from clients and investors." },
-                                    { title: "Funding Access", icon: Banknote, desc: "Attract investors and apply for loans easily." },
-                                    { title: "Growth Opportunities", icon: TrendingUp, desc: "Formal structure makes expansion easier." }
-                                ].map((benefit, idx) => (
-                                    <div key={idx} className="p-5 bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col gap-3">
-                                        <benefit.icon size={24} style={{ color: "#f77f00" }} />
-                                        <h3 className="font-bold text-gray-900">{benefit.title}</h3>
-                                        <p className="text-sm text-gray-500">{benefit.desc}</p>
-                                    </div>
-                                ))}
+                    <div className="text-center max-w-3xl mx-auto mb-12">
+                        <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ color: "#03045e" }}>
+                            Benefits of Registration
+                        </h2>
+                        <p className="text-gray-600 text-lg">
+                            Registering your company offers several advantages that support long-term business growth.
+                        </p>
+                    </div>
+                    <div className="flex flex-wrap justify-center gap-6">
+                        {[
+                            { title: "Legal Recognition", icon: Award, desc: "A registered company is legally recognized." },
+                            { title: "Limited Liability", icon: ShieldCheck, desc: "Owners are protected from personal liability." },
+                            { title: "Business Credibility", icon: Building2, desc: "Gain greater trust from clients and investors." },
+                            { title: "Funding Access", icon: Banknote, desc: "Attract investors and apply for loans easily." },
+                            { title: "Growth Opportunities", icon: TrendingUp, desc: "Formal structure makes expansion easier." }
+                        ].map((benefit, idx) => (
+                            <div key={idx} className="p-6 bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col gap-3" style={{ width: 'calc(33.333% - 16px)', minWidth: '260px' }}>
+                                <benefit.icon size={24} style={{ color: "#f77f00" }} />
+                                <h3 className="font-bold text-gray-900">{benefit.title}</h3>
+                                <p className="text-sm text-gray-500 text-justify">{benefit.desc}</p>
                             </div>
-                        </div>
-
+                        ))}
                     </div>
                 </div>
             </section>

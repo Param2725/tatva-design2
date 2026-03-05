@@ -318,37 +318,7 @@ export default function StartupIndiaRegistration() {
                 </div>
             </section>
 
-            {/* Documents Required */}
-            <section className="py-16 lg:py-24 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ color: "#03045e" }}>
-                            Documents Required for Startup India Registration
-                        </h2>
-                        <p className="text-gray-600 text-lg">
-                            To complete the registration process, certain documents may be required.
-                        </p>
-                    </div>
 
-                    <div className="max-w-3xl mx-auto">
-                        <ul className="space-y-4">
-                            {[
-                                "Certificate of incorporation",
-                                "PAN of the company",
-                                "Details of directors or partners",
-                                "Business description explaining innovation or scalability",
-                                "Website or product details (if available)",
-                                "Funding or investor details (if applicable)"
-                            ].map((doc, idx) => (
-                                <li key={idx} className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl shadow-sm border border-gray-100">
-                                    <CheckCircle2 className="flex-shrink-0 mt-0.5" style={{ color: "#48cae4" }} size={20} />
-                                    <span className="text-gray-700 font-medium">{doc}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </section>
 
             {/* Why Choose Professional Services */}
             <section className="py-16 lg:py-24 bg-gray-50">
