@@ -220,11 +220,36 @@ export default function StartupIndiaRegistration() {
 
                     <div className="flex flex-wrap justify-center gap-8">
                         {[
-                            { title: "Tax Benefits", desc: "Eligible startups can receive income tax exemptions for three consecutive years during their initial years of operation.", icon: Banknote },
-                            { title: "Self-Certification for Compliance", desc: "Startups can self-certify compliance with several labour and environmental laws, reducing regulatory burdens.", icon: FileText },
-                            { title: "Intellectual Property Support", desc: "The scheme provides support for patent and trademark filings with significant rebates and faster processing.", icon: ShieldCheck },
-                            { title: "Access to Government Tenders", desc: "Recognized startups can apply for government tenders without meeting certain experience or turnover requirements.", icon: Globe },
-                            { title: "Funding Opportunities", desc: "Startups may gain access to government funding initiatives, venture capital support, and incubation programs.", icon: TrendingUp }
+                            {
+                                title: "Tax Benefits", icon: Banknote, points: [
+                                    <><strong style={{ color: "#03045e" }}>Income tax waiver</strong> for up to <strong style={{ color: "#03045e" }}>3 years</strong> under Section 80-IAC</>,
+                                    <>Capital gains tax can be <strong style={{ color: "#03045e" }}>waived</strong> if invested in a venture capital fund</>
+                                ]
+                            },
+                            {
+                                title: "Subsidy", icon: Award, points: [
+                                    <>Receive up to <strong style={{ color: "#03045e" }}>1% benefit</strong> in government subsidies</>,
+                                    <>Access various <strong style={{ color: "#03045e" }}>government-backed schemes</strong> for startups</>
+                                ]
+                            },
+                            {
+                                title: "Intellectual Property Support", icon: ShieldCheck, points: [
+                                    <>Trademark filing fee reduced by <strong style={{ color: "#03045e" }}>50%</strong> for registered startups</>,
+                                    <>Patent filing with <strong style={{ color: "#03045e" }}>fast-track process</strong> and additional benefits</>
+                                ]
+                            },
+                            {
+                                title: "Access to Government Tenders", icon: Globe, points: [
+                                    <><strong style={{ color: "#03045e" }}>Experience criteria</strong> and turnover requirements may be waived</>,
+                                    <><strong style={{ color: "#03045e" }}>EMD (Earnest Money Deposit)</strong> is not required in many tenders</>
+                                ]
+                            },
+                            {
+                                title: "Funding Opportunities", icon: TrendingUp, points: [
+                                    <>Receive funding under <strong style={{ color: "#03045e" }}>Startup India sector segment</strong> including seed funding</>,
+                                    <>Access <strong style={{ color: "#03045e" }}>bank loans</strong> and government benefit schemes after registration</>
+                                ]
+                            }
                         ].map((benefit, idx) => (
                             <div
                                 key={idx}
@@ -243,8 +268,15 @@ export default function StartupIndiaRegistration() {
                                 >
                                     <benefit.icon size={24} style={{ color: "#f77f00" }} />
                                 </div>
-                                <h3 className="text-xl font-bold mb-3" style={{ color: "#03045e" }}>{benefit.title}</h3>
-                                <p className="text-gray-600 leading-relaxed">{benefit.desc}</p>
+                                <h3 className="text-xl font-bold mb-4" style={{ color: "#03045e" }}>{benefit.title}</h3>
+                                <ul className="space-y-3">
+                                    {benefit.points.map((point, pIdx) => (
+                                        <li key={pIdx} className="flex items-start gap-2.5 text-gray-600 leading-relaxed text-sm">
+                                            <CheckCircle2 className="flex-shrink-0 mt-0.5" size={16} style={{ color: "#48cae4" }} />
+                                            <span>{point}</span>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         ))}
                     </div>
