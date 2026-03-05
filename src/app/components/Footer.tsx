@@ -1,14 +1,15 @@
 import { Phone, Mail, MapPin, ArrowRight, Linkedin, Twitter, Facebook, Instagram, ExternalLink } from "lucide-react";
+import { useNavigate, useLocation } from "react-router";
 
 const services = [
-  "Company Registration",
-  "LLP Registration",
-  "GST Registration",
-  "ISO Certification",
-  "Trademark Registration",
-  "FSSAI License",
-  "MSME Registration",
-  "Startup India",
+  { name: "Company Registration", href: "/services/company-registration" },
+  { name: "LLP Registration", href: "/services/llp-registration" },
+  { name: "GST Registration", href: "/services/gst-registration" },
+  { name: "ISO Certification", href: "/services/iso-certification" },
+  { name: "Trademark Registration", href: "/services/trademark-registration" },
+  { name: "FSSAI License", href: "/services/fssai-license" },
+  { name: "MSME Registration", href: "/services/msme-registration" },
+  { name: "Startup India", href: "/services/startup-india" },
 ];
 
 const quickLinks = [
@@ -30,9 +31,24 @@ const compliance = [
 ];
 
 export function Footer() {
-  const scrollTo = (id: string) => {
-    const el = document.querySelector(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (href: string) => {
+    if (href.startsWith("#")) {
+      if (location.pathname !== "/") {
+        navigate(`/${href}`);
+      } else {
+        if (href === "#home") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          const el = document.querySelector(href);
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    } else {
+      navigate(href);
+    }
   };
 
   return (
@@ -143,7 +159,7 @@ export function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <button
-                    onClick={() => scrollTo(link.href)}
+                    onClick={() => handleNavClick(link.href)}
                     className="flex items-center gap-1.5 transition-all duration-200"
                     style={{ color: "rgba(255,255,255,0.6)", fontSize: "13.5px", background: "none", border: "none", cursor: "pointer", padding: 0 }}
                     onMouseEnter={(e) => {
@@ -176,9 +192,9 @@ export function Footer() {
             </h4>
             <ul className="space-y-2.5">
               {services.map((service) => (
-                <li key={service}>
+                <li key={service.name}>
                   <button
-                    onClick={() => scrollTo("#services")}
+                    onClick={() => handleNavClick(service.href)}
                     className="flex items-center gap-1.5 transition-all duration-200"
                     style={{ color: "rgba(255,255,255,0.6)", fontSize: "13.5px", background: "none", border: "none", cursor: "pointer", padding: 0, textAlign: "left" }}
                     onMouseEnter={(e) => {
@@ -189,7 +205,7 @@ export function Footer() {
                     }}
                   >
                     <ArrowRight size={11} />
-                    {service}
+                    {service.name}
                   </button>
                 </li>
               ))}
@@ -213,7 +229,7 @@ export function Footer() {
               {compliance.map((item) => (
                 <li key={item}>
                   <button
-                    onClick={() => scrollTo("#contact")}
+                    onClick={() => handleNavClick("#contact")}
                     className="flex items-center gap-1.5 transition-all duration-200"
                     style={{ color: "rgba(255,255,255,0.6)", fontSize: "13.5px", background: "none", border: "none", cursor: "pointer", padding: 0, textAlign: "left" }}
                     onMouseEnter={(e) => {
@@ -245,7 +261,7 @@ export function Footer() {
                 Get a free 30-min consultation with our expert.
               </p>
               <button
-                onClick={() => scrollTo("#contact")}
+                onClick={() => handleNavClick("#contact")}
                 className="w-full py-2 rounded-lg text-white text-xs"
                 style={{
                   background: "#f77f00",

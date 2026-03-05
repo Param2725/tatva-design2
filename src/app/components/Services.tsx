@@ -28,6 +28,7 @@ const services = [
     features: ["Private Limited", "LLP Registration", "One Person Company", "Partnership"],
     timeline: "5–7 Working Days",
     starting: "₹4,999",
+    href: "/services/company-registration"
   },
   {
     icon: Rocket,
@@ -39,6 +40,7 @@ const services = [
     features: ["DPIIT Recognition", "Tax Exemption (80IAC)", "Angel Tax Exemption", "Patent Rebates"],
     timeline: "3–5 Working Days",
     starting: "₹3,999",
+    href: "#contact"
   },
   {
     icon: Factory,
@@ -50,6 +52,7 @@ const services = [
     features: ["Udyam Certificate", "NIC Code Selection", "Subsidy Eligibility", "Priority Lending"],
     timeline: "1–2 Working Days",
     starting: "₹999",
+    href: "#contact"
   },
   {
     icon: Fingerprint,
@@ -61,6 +64,7 @@ const services = [
     features: ["TM Application", "Logo Protection", "Objection Handling", "Brand Advisory"],
     timeline: "18–24 Months",
     starting: "₹6,999",
+    href: "#contact"
   },
   {
     icon: ShoppingCart,
@@ -72,6 +76,7 @@ const services = [
     features: ["Seller Registration", "Vendor Assessment", "Catalogue Management", "Tender Bidding"],
     timeline: "2–4 Working Days",
     starting: "₹1,999",
+    href: "#contact"
   },
   {
     icon: FileText,
@@ -83,6 +88,7 @@ const services = [
     features: ["GSTIN Allotment", "State/Central Level", "E-way Bill Setup", "LUT Filing"],
     timeline: "2–3 Working Days",
     starting: "₹1,499",
+    href: "#contact"
   },
   // SET 2
   {
@@ -95,6 +101,7 @@ const services = [
     features: ["ISO 9001:2015", "CE Marking", "GMP Certification", "Quality Audits"],
     timeline: "7–15 Working Days",
     starting: "₹8,999",
+    href: "#contact"
   },
   {
     icon: ShieldCheck,
@@ -106,6 +113,7 @@ const services = [
     features: ["Single Point Reg", "EMD Exemption", "Tender Fee Waiver", "Credit Support"],
     timeline: "15–20 Working Days",
     starting: "₹12,999",
+    href: "#contact"
   },
   {
     icon: Briefcase,
@@ -117,6 +125,7 @@ const services = [
     features: ["Part A (Intent)", "Part B (Commencement)", "SIA Registration", "Amendment of IEM"],
     timeline: "3–5 Working Days",
     starting: "₹4,999",
+    href: "#contact"
   },
   {
     icon: Building2,
@@ -128,6 +137,7 @@ const services = [
     features: ["Class Registration", "Document Prep", "Renewal & Upgrade", "Govt Liaison"],
     timeline: "20–30 Working Days",
     starting: "Custom Price",
+    href: "#contact"
   },
   {
     icon: Landmark,
@@ -139,6 +149,7 @@ const services = [
     features: ["Project Reports", "CMA Data Prep", "CGFMSE Loans", "State Subsidies"],
     timeline: "Variable",
     starting: "Custom Price",
+    href: "#contact"
   },
   {
     icon: Cog,
@@ -150,21 +161,30 @@ const services = [
     features: ["Factory License", "GPCB CTE/CCA", "BIS Certification", "Credit Rating Prep"],
     timeline: "Variable",
     starting: "Custom Price",
+    href: "#contact"
   }
 ];
+
+import { useNavigate } from "react-router";
 
 function ServiceCard({ service }: { service: (typeof services)[0] }) {
   const [hovered, setHovered] = useState(false);
   const Icon = service.icon;
+  const navigate = useNavigate();
 
-  const scrollToContact = () => {
-    const el = document.querySelector("#contact");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+  const handleActionClick = () => {
+    if (service.href.startsWith("#")) {
+      const el = document.querySelector(service.href);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(service.href);
+    }
   };
 
   return (
     <div
-      className="rounded-2xl overflow-hidden flex flex-col cursor-default"
+      onClick={handleActionClick}
+      className="rounded-2xl overflow-hidden flex flex-col cursor-pointer"
       style={{
         background: hovered ? "white" : "white",
         border: hovered ? `1.5px solid ${service.badgeColor}` : "1.5px solid #e2f4fb",
@@ -258,7 +278,6 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
           <p style={{ color: "#03045e", fontSize: "16px", fontWeight: 800 }}>{service.starting}</p>
         </div>
         <button
-          onClick={scrollToContact}
           className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-white text-sm"
           style={{
             background: "#f77f00",

@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { useNavigate, useLocation } from "react-router";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -20,10 +23,22 @@ export function Header() {
     { label: "Contact", href: "#contact" },
   ];
 
-  const scrollTo = (id: string) => {
-    const el = document.querySelector(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+  const handleNavClick = (href: string) => {
     setMobileOpen(false);
+    if (href.startsWith("#")) {
+      if (location.pathname !== "/") {
+        navigate(`/${href}`);
+      } else {
+        if (href === "#home") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          const el = document.querySelector(href);
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    } else {
+      navigate(href);
+    }
   };
 
   return (
@@ -40,7 +55,7 @@ export function Header() {
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
           <button
-            onClick={() => scrollTo("#home")}
+            onClick={() => handleNavClick("#home")}
             className="flex items-center flex-shrink-0"
           >
             <img
@@ -55,7 +70,7 @@ export function Header() {
             {navLinks.map((link) => (
               <button
                 key={link.label}
-                onClick={() => scrollTo(link.href)}
+                onClick={() => handleNavClick(link.href)}
                 className="px-4 py-2 rounded-md text-sm transition-all duration-200"
                 style={{
                   color: "rgba(255,255,255,0.85)",
@@ -94,7 +109,7 @@ export function Header() {
               +91 98765 43210
             </a>
             <button
-              onClick={() => scrollTo("#contact")}
+              onClick={() => handleNavClick("#contact")}
               className="px-5 py-2 rounded-lg text-white text-sm transition-all duration-200"
               style={{
                 background: "#f77f00",
@@ -135,7 +150,7 @@ export function Header() {
             {navLinks.map((link) => (
               <button
                 key={link.label}
-                onClick={() => scrollTo(link.href)}
+                onClick={() => handleNavClick(link.href)}
                 className="text-left px-4 py-3 rounded-lg text-sm"
                 style={{
                   color: "rgba(255,255,255,0.9)",
@@ -158,7 +173,7 @@ export function Header() {
                 +91 98765 43210
               </a>
               <button
-                onClick={() => scrollTo("#contact")}
+                onClick={() => handleNavClick("#contact")}
                 className="px-4 py-3 rounded-lg text-white text-center text-sm"
                 style={{
                   background: "#f77f00",

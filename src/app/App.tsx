@@ -1,15 +1,9 @@
+import { Routes, Route } from "react-router";
 import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { PremiumCarousel } from "./components/PremiumCarousel";
-import { ClientTicker } from "./components/ClientTicker";
-import { Services } from "./components/Services";
-import { About } from "./components/About";
-import { WhyChooseUs } from "./components/WhyChooseUs";
-import { Process } from "./components/Process";
-import { Testimonials } from "./components/Testimonials";
-import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { FloatingCTA } from "./components/FloatingCTA";
+import Home from "./pages/Home";
+import CompanyRegistration from "./pages/services/CompanyRegistration";
 
 export default function App() {
   return (
@@ -23,17 +17,10 @@ export default function App() {
       }}
     >
       <Header />
-      <main>
-        <Hero />
-        <PremiumCarousel />
-        <ClientTicker />
-        <Services />
-        <About />
-        <WhyChooseUs />
-        <Process />
-        <Testimonials />
-        <Contact />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services/company-registration" element={<CompanyRegistration />} />
+      </Routes>
       <Footer />
       <FloatingCTA />
     </div>
