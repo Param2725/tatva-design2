@@ -52,7 +52,7 @@ const services = [
     features: ["Udyam Certificate", "NIC Code Selection", "Subsidy Eligibility", "Priority Lending"],
     timeline: "1–2 Working Days",
     starting: "₹999",
-    href: "#contact"
+    href: "/services/msme-registration"
   },
   {
     icon: Fingerprint,
@@ -64,7 +64,7 @@ const services = [
     features: ["TM Application", "Logo Protection", "Objection Handling", "Brand Advisory"],
     timeline: "18–24 Months",
     starting: "₹6,999",
-    href: "#contact"
+    href: "/services/trademark-registration"
   },
   {
     icon: ShoppingCart,
