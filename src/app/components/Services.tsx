@@ -76,7 +76,7 @@ const services = [
     features: ["Seller Registration", "Vendor Assessment", "Catalogue Management", "Tender Bidding"],
     timeline: "2–4 Working Days",
     starting: "₹1,999",
-    href: "#contact"
+    href: "/services/gem-registration"
   },
   {
     icon: FileText,

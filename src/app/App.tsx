@@ -7,6 +7,7 @@ import CompanyRegistration from "./pages/services/CompanyRegistration";
 import StartupIndiaRegistration from "./pages/services/StartupIndiaRegistration";
 import MSMERegistration from "./pages/services/MSMERegistration";
 import TrademarkRegistration from "./pages/services/TrademarkRegistration";
+import GeMRegistration from "./pages/services/GeMRegistration";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/services/startup-india-registration" element={<StartupIndiaRegistration />} />
         <Route path="/services/msme-registration" element={<MSMERegistration />} />
         <Route path="/services/trademark-registration" element={<TrademarkRegistration />} />
+        <Route path="/services/gem-registration" element={<GeMRegistration />} />
       </Routes>
       <Footer />
       <FloatingCTA />
