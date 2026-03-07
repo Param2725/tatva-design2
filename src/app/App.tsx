@@ -3,6 +3,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { FloatingCTA } from "./components/FloatingCTA";
 import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
 import CompanyRegistration from "./pages/services/CompanyRegistration";
 import StartupIndiaRegistration from "./pages/services/StartupIndiaRegistration";
 import MSMERegistration from "./pages/services/MSMERegistration";
@@ -23,6 +24,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/services/company-registration" element={<CompanyRegistration />} />
         <Route path="/services/startup-india-registration" element={<StartupIndiaRegistration />} />
         <Route path="/services/msme-registration" element={<MSMERegistration />} />

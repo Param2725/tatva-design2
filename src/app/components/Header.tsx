@@ -17,7 +17,7 @@ export function Header() {
 
   const navLinks = [
     { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
+    { label: "About", href: "/about-us" },
     { label: "Services", href: "#services" },
     { label: "Process", href: "#process" },
     { label: "Contact", href: "#contact" },
@@ -56,13 +56,41 @@ export function Header() {
           {/* Logo */}
           <button
             onClick={() => handleNavClick("#home")}
-            className="flex items-center flex-shrink-0"
+            className="flex flex-col items-start flex-shrink-0 group relative"
           >
-            <img
-              src="/logo.png"
-              alt="Tatva Consultancy Services"
-              className="h-10 sm:h-12 w-auto"
-            />
+            <div className="relative flex items-start">
+              <span
+                className="font-serif font-black tracking-[0.05em] leading-none transition-colors duration-300"
+                style={{
+                  fontSize: "clamp(1.5rem, 4vw, 2.2rem)",
+                  color: isScrolled ? "white" : "#48cae4",
+                  textShadow: "0 2px 10px rgba(0,0,0,0.1)",
+                }}
+              >
+                TATVA
+              </span>
+              <span
+                className="font-serif ml-0.5"
+                style={{
+                  fontSize: "clamp(0.6rem, 1.5vw, 0.9rem)",
+                  color: isScrolled ? "white" : "#48cae4",
+                  lineHeight: 1,
+                  marginTop: "0.2rem"
+                }}
+              >
+                ®
+              </span>
+            </div>
+            <span
+              className="font-serif font-semibold tracking-[0.08em] mt-1 transition-colors duration-300"
+              style={{
+                fontSize: "clamp(0.65rem, 2vw, 0.9rem)",
+                color: isScrolled ? "rgba(255,255,255,0.9)" : "white",
+                textTransform: "uppercase"
+              }}
+            >
+              Consultancy Services
+            </span>
           </button>
 
           {/* Desktop Nav */}

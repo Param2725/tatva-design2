@@ -58,12 +58,40 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             {/* Logo */}
-            <div className="mb-5">
-              <img
-                src="/logo.png"
-                alt="Tatva Consultancy Services"
-                className="h-12 sm:h-14 w-auto"
-              />
+            <div className="mb-5 flex flex-col items-start">
+              <div className="relative flex items-start">
+                <span
+                  className="font-serif font-black tracking-[0.05em] leading-none"
+                  style={{
+                    fontSize: "clamp(1.75rem, 5vw, 2.8rem)",
+                    color: "white",
+                    textShadow: "0 2px 10px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  TATVA
+                </span>
+                <span
+                  className="font-serif ml-1"
+                  style={{
+                    fontSize: "clamp(0.7rem, 2vw, 1.1rem)",
+                    color: "white",
+                    lineHeight: 1,
+                    marginTop: "0.2rem"
+                  }}
+                >
+                  ®
+                </span>
+              </div>
+              <span
+                className="font-serif font-semibold tracking-[0.08em] mt-1"
+                style={{
+                  fontSize: "clamp(0.75rem, 2.2vw, 1.1rem)",
+                  color: "rgba(255,255,255,0.9)",
+                  textTransform: "uppercase"
+                }}
+              >
+                Consultancy Services
+              </span>
             </div>
 
             <p
