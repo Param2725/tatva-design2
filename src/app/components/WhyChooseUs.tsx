@@ -90,7 +90,7 @@ export function WhyChooseUs() {
               lineHeight: 1.2,
             }}
           >
-            Why <span style={{ color: "#f77f00" }}>5,000+</span> Founders Trust Us
+            Why <span style={{ color: "#f77f00" }}>500+</span> Founders Trust Us
           </h2>
           <div style={{ width: "60px", height: "3px", background: "#f77f00", borderRadius: "2px", margin: "0 auto 16px" }} />
           <p

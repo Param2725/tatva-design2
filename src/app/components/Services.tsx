@@ -27,7 +27,7 @@ const services = [
     description: "Register your Private Limited, LLP, OPC, or Public Limited company with MCA. Includes DIN, DSC, name approval, MOA/AOA, and Incorporation.",
     features: ["Private Limited", "LLP Registration", "One Person Company", "Partnership"],
     timeline: "5–7 Working Days",
-    starting: "₹4,999",
+    starting: "Custom Price",
     href: "/services/company-registration"
   },
   {
@@ -39,7 +39,7 @@ const services = [
     description: "Navigate DPIIT recognition to get tax exemptions, easier compliance, fast-tracking of patent applications, and funding support.",
     features: ["DPIIT Recognition", "Tax Exemption (80IAC)", "Angel Tax Exemption", "Patent Rebates"],
     timeline: "3–5 Working Days",
-    starting: "₹3,999",
+    starting: "Custom Price",
     href: "/services/startup-india-registration"
   },
   {
@@ -51,7 +51,7 @@ const services = [
     description: "Register under Udyam (MSME) to unlock government subsidies, priority sector lending, tax concessions, and prompt payment protection.",
     features: ["Udyam Certificate", "NIC Code Selection", "Subsidy Eligibility", "Priority Lending"],
     timeline: "1–2 Working Days",
-    starting: "₹999",
+    starting: "Custom Price",
     href: "/services/msme-registration"
   },
   {
@@ -63,7 +63,7 @@ const services = [
     description: "Safeguard your brand name, logo, and intellectual identity with a registered trademark. Prevent misuse and stand out in the market.",
     features: ["TM Application", "Logo Protection", "Objection Handling", "Brand Advisory"],
     timeline: "18–24 Months",
-    starting: "₹6,999",
+    starting: "Custom Price",
     href: "/services/trademark-registration"
   },
   {
@@ -75,7 +75,7 @@ const services = [
     description: "Register as a seller on the Government e-Marketplace (GeM) to participate in direct government procurement and national tenders.",
     features: ["Seller Registration", "Vendor Assessment", "Catalogue Management", "Tender Bidding"],
     timeline: "2–4 Working Days",
-    starting: "₹1,999",
+    starting: "Custom Price",
     href: "/services/gem-registration"
   },
   // SET 2
@@ -88,7 +88,7 @@ const services = [
     description: "Achieve globally recognized certifications like ISO 9001, CE Mark, and GMP to enhance business credibility, quality control, and tender eligibility.",
     features: ["ISO 9001:2015", "CE Marking", "GMP Certification", "Quality Audits"],
     timeline: "7–15 Working Days",
-    starting: "₹8,999",
+    starting: "Custom Price",
     href: "#contact"
   },
   {
@@ -100,7 +100,7 @@ const services = [
     description: "Get NSIC registration under Central Government Stores Purchase Programme (CSPO) for EMD exemption and tender participation benefits.",
     features: ["Single Point Reg", "EMD Exemption", "Tender Fee Waiver", "Credit Support"],
     timeline: "15–20 Working Days",
-    starting: "₹12,999",
+    starting: "Custom Price",
     href: "#contact"
   },
   {
@@ -112,7 +112,7 @@ const services = [
     description: "Filing Industrial Entrepreneur Memorandum (IEM) for large scale industries exempted from industrial licensing provisions.",
     features: ["Part A (Intent)", "Part B (Commencement)", "SIA Registration", "Amendment of IEM"],
     timeline: "3–5 Working Days",
-    starting: "₹4,999",
+    starting: "Custom Price",
     href: "#contact"
   },
   {
@@ -140,13 +140,25 @@ const services = [
     href: "#contact"
   },
   {
-    icon: Cog,
-    title: "FACTORY ACT- GPCB - BIS, IBR, EIL, CREDIT RATING ETC",
-    shortTitle: "Compliance",
+    icon: Factory,
+    title: "FACTORY ACT LICENCE",
+    shortTitle: "Factory Act",
     badge: "Operations",
     badgeColor: "#f77f00",
-    description: "End-to-end operational compliance including Factory Act licensing, GPCB pollution boards, BIS, IBR, EIL, and Credit Rating assistance.",
-    features: ["Factory License", "GPCB CTE/CCA", "BIS Certification", "Credit Rating Prep"],
+    description: "End-to-end operational compliance including Factory Act licensing, plan approvals, and layout sanctioning.",
+    features: ["Factory License", "Plan Approval", "License Renewal", "Compliance Support"],
+    timeline: "Variable",
+    starting: "Custom Price",
+    href: "#contact"
+  },
+  {
+    icon: Cog,
+    title: "GPCB - BIS, IBR, EIL, CREDIT RATING ETC",
+    shortTitle: "GPCB / BIS",
+    badge: "Certification",
+    badgeColor: "#f77f00",
+    description: "Comprehensive assistance for GPCB pollution boards, BIS certification, IBR, EIL, and Credit Rating preparation.",
+    features: ["GPCB CTE/CCA", "BIS Certification", "IBR & EIL", "Credit Rating Prep"],
     timeline: "Variable",
     starting: "Custom Price",
     href: "#contact"
@@ -407,6 +419,21 @@ export function Services() {
           >
             <ChevronRight size={24} />
           </button>
+        </div>
+
+        {/* Contact Note */}
+        <div className="mt-12 text-center">
+          <p style={{ color: "rgba(3,4,94,0.7)", fontSize: "14.5px", fontWeight: 500 }}>
+            Didn't find the service you're looking for?{" "}
+            <a
+              href="#contact"
+              className="transition-colors duration-200 hover:underline"
+              style={{ color: "#f77f00", fontWeight: 700, textDecoration: "none" }}
+            >
+              Contact Us
+            </a>
+            {" "}for a custom solution.
+          </p>
         </div>
       </div>
     </section>

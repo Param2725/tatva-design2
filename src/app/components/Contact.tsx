@@ -2,15 +2,18 @@ import { useState } from "react";
 import { Send, Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
 
 const services = [
-  "Company Registration (Pvt. Ltd.)",
-  "LLP Registration",
-  "One Person Company (OPC)",
-  "Partnership Firm",
-  "ISO Certification",
-  "Trademark Registration",
-  "MSME / Udyam Registration",
+  "Company Registration",
   "Startup India Registration",
-  "Annual Compliance",
+  "MSME / Udyam Registration",
+  "Trademark Registration",
+  "GeM Registration",
+  "ISO / CE / GMP Certification",
+  "NSIC - CSPO Certificate",
+  "IEM Registration",
+  "R&B Approval",
+  "Loans & Subsidy",
+  "Factory Act Licence",
+  "GPCB / BIS / IBR / EIL",
   "Other / Not Sure",
 ];
 
@@ -68,7 +71,7 @@ export function Contact() {
     {
       icon: Clock,
       label: "Working Hours",
-      value: "Mon – Sat: 9 AM – 7 PM",
+      value: "Mon – Sat: 9:00 AM – 6:30 PM",
       href: "#",
     },
   ];
@@ -258,7 +261,7 @@ export function Contact() {
                         required
                         value={form.name}
                         onChange={handleChange}
-                        placeholder="Rajesh Kumar"
+                        placeholder="Enter Your Full Name"
                         className="w-full px-4 py-3 rounded-xl outline-none transition-all duration-200"
                         style={{
                           background: "#f8fafc",
@@ -294,7 +297,7 @@ export function Contact() {
                         required
                         value={form.phone}
                         onChange={handleChange}
-                        placeholder="+91 98765 43210"
+                        placeholder="Enter Your Phone Number"
                         className="w-full px-4 py-3 rounded-xl outline-none transition-all duration-200"
                         style={{
                           background: "#f8fafc",
@@ -331,7 +334,7 @@ export function Contact() {
                       required
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="you@company.com"
+                      placeholder="Enter Your Email Address"
                       className="w-full px-4 py-3 rounded-xl outline-none transition-all duration-200"
                       style={{
                         background: "#f8fafc",

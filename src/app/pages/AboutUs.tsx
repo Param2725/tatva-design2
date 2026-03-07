@@ -39,7 +39,8 @@ export default function AboutUs() {
                 />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold mb-4 leading-tight">
-                        About Tatva Consultancy
+                        About<br />
+                        <span style={{ color: "rgba(255,255,255,0.9)" }}>Tatva Consultancy Services</span>
                     </h1>
                     <p className="text-lg md:text-xl max-w-2xl mx-auto" style={{ color: "rgba(255,255,255,0.8)" }}>
                         Simplifying business registrations and certifications across India since 2022.
@@ -96,7 +97,7 @@ export default function AboutUs() {
                             <div className="flex flex-wrap gap-4 mt-6">
                                 {[
                                     { icon: ShieldCheck, title: "MCA Authorized", desc: "Registered with Ministry of Corporate Affairs" },
-                                    { icon: TrendingUp, title: "5,000+ Businesses", desc: "Successfully registered across India" },
+                                    { icon: TrendingUp, title: "500+ Businesses", desc: "Successfully registered across India" },
                                 ].map((h) => (
                                     <div
                                         key={h.title}
@@ -133,16 +134,16 @@ export default function AboutUs() {
 
                             <div className="space-y-4 text-gray-600 text-base leading-relaxed text-justify">
                                 <p>
-                                    Established in the year <strong style={{ color: "#03045e" }}>2022 in Ahmedabad (Gujarat, India)</strong>, we, <strong style={{ color: "#03045e" }}>"Tatva Registration & Certification Services Pvt. Ltd."</strong>, are engaged in providing a wide range of compliance and certification services.
+                                    Established in <strong style={{ color: "#03045e" }}>2022 in Ahmedabad</strong>, <strong style={{ color: "#03045e" }}>Tatva Registration & Certification Services Pvt. Ltd.</strong> is a leading <strong style={{ color: "#03045e" }}>business compliance consultancy</strong> delivering end-to-end regulatory solutions across India.
                                 </p>
                                 <p>
-                                    Our offerings include <strong style={{ color: "#0077b6" }}>MSME Certification, ISO Certification, Trademark Registration, Company Registration, Startup India Registration, GeM Registration</strong>, and many more. We have a team of trained and skilled professionals with deep expertise in their respective domains.
+                                    We exclusively provide <strong style={{ color: "#0077b6" }}>Company Registration, Startup India, MSME (Udyam), Trademark & Logo, GeM, ISO/CE/GMP, NSIC-CSPO, IEM, R&B Approvals, Project Loans, Factory Act Licence, and GPCB/BIS/IBR Certification</strong>. We navigate complex frameworks so you stay 100% compliant.
                                 </p>
                                 <p>
-                                    We specialize in compliance and government certification services and also conduct <strong style={{ color: "#03045e" }}>seminars in industrial areas</strong> to raise awareness about corporate governance and government benefits available to MSMEs.
+                                    Beyond compliance, we conduct <strong style={{ color: "#03045e" }}>industrial seminars</strong> to educate SMEs on corporate governance, intellectual property, and government subsidies.
                                 </p>
                                 <p>
-                                    Under the management of <strong style={{ color: "#03045e" }}>"Bharat Prajapati"</strong>, we are able to attain complete satisfaction of our clients. His rich industry experience and knowledge have helped us achieve a reputed name in the industry.
+                                    Led by <strong style={{ color: "#03045e" }}>Founder Bharat Prajapati</strong>, our expert team ensures reliable, affordable support for startups and established enterprises alike.
                                 </p>
                             </div>
                         </div>
@@ -292,7 +293,7 @@ export default function AboutUs() {
                                     </div>
                                     <div>
                                         <p className="text-sm font-bold mb-1" style={{ color: "#03045e" }}>Working Hours</p>
-                                        <p className="text-gray-600 text-sm">Mon – Sat: 9:00 AM – 7:00 PM</p>
+                                        <p className="text-gray-600 text-sm">Mon – Sat: 9:00 AM – 6:30 PM</p>
                                     </div>
                                 </div>
                             </div>

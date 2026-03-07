@@ -3,11 +3,17 @@ import { useNavigate, useLocation } from "react-router";
 
 const services = [
   { name: "Company Registration", href: "/services/company-registration" },
-  { name: "LLP Registration", href: "/services/llp-registration" },
-  { name: "ISO Certification", href: "/services/iso-certification" },
-  { name: "Trademark Registration", href: "/services/trademark-registration" },
-  { name: "MSME Registration", href: "/services/msme-registration" },
   { name: "Startup India", href: "/services/startup-india-registration" },
+  { name: "MSME / Udyam Registration", href: "/services/msme-registration" },
+  { name: "Trademark Registration", href: "/services/trademark-registration" },
+  { name: "GeM Registration", href: "/services/gem-registration" },
+  { name: "ISO / CE / GMP Certification", href: "#contact" },
+  { name: "NSIC - CSPO Certificate", href: "#contact" },
+  { name: "IEM Registration", href: "#contact" },
+  { name: "R&B Approval", href: "#contact" },
+  { name: "Loans & Subsidy", href: "#contact" },
+  { name: "Factory Act Licence", href: "#contact" },
+  { name: "GPCB / BIS / IBR / EIL", href: "#contact" },
 ];
 
 const quickLinks = [
@@ -19,14 +25,6 @@ const quickLinks = [
   { label: "Contact Us", href: "#contact" },
 ];
 
-const compliance = [
-  "Annual Compliance",
-  "Income Tax Filing",
-  "ROC Filing",
-  "Director KYC",
-  "MCA Annual Return",
-  "Audit & Accounts",
-];
 
 export function Footer() {
   const navigate = useNavigate();
@@ -251,42 +249,8 @@ export function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Compliance */}
+          {/* CTA in Footer */}
           <div>
-            <h4
-              style={{
-                color: "white",
-                fontSize: "13px",
-                fontWeight: 700,
-                letterSpacing: "0.5px",
-                marginBottom: "16px",
-              }}
-            >
-              COMPLIANCE
-            </h4>
-            <ul className="space-y-2.5 mb-6">
-              {compliance.map((item) => (
-                <li key={item}>
-                  <button
-                    onClick={() => handleNavClick("#contact")}
-                    className="flex items-center gap-1.5 transition-all duration-200"
-                    style={{ color: "rgba(255,255,255,0.6)", fontSize: "13.5px", background: "none", border: "none", cursor: "pointer", padding: 0, textAlign: "left" }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.color = "#48cae4";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.6)";
-                    }}
-                  >
-                    <ArrowRight size={11} />
-                    {item}
-                  </button>
-                </li>
-              ))}
-            </ul>
-
-            {/* CTA in Footer */}
             <div
               className="rounded-xl p-4"
               style={{

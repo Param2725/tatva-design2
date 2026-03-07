@@ -81,7 +81,7 @@ export function Hero() {
               >
                 Business Registration
               </span>{" "}
-              for Startups
+              for Startups & Industries.
             </h1>
 
             <p
