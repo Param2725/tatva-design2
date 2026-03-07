@@ -9,11 +9,12 @@ export function Hero() {
   const stats = [
     { value: "5,000+", label: "Businesses Registered" },
     { value: "98%", label: "Client Satisfaction" },
-    { value: "10+", label: "Years Experience" },
+    { value: "20+", label: "Years Experience" },
     { value: "48 hrs", label: "Average Processing" },
   ];
 
   const highlights = [
+    "Company Registration",
     "Startup India Registration",
     "ISO Certifications",
     "Trademark Registration"
@@ -159,108 +160,13 @@ export function Hero() {
           </div>
 
           {/* Right Card */}
-          <div className="hidden lg:block">
-            <div
-              className="rounded-2xl overflow-hidden"
-              style={{
-                background: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.12)",
-                backdropFilter: "blur(20px)",
-              }}
-            >
-              {/* Card Header */}
-              <div
-                className="px-6 py-4 flex items-center justify-between"
-                style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
-              >
-                <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#ff5f57" }} />
-                  <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#febc2e" }} />
-                  <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#28c840" }} />
-                </div>
-                <span style={{ color: "rgba(255,255,255,0.5)", fontSize: "12px" }}>Quick Registration Planner</span>
-                <div className="w-16" />
-              </div>
-
-              <div className="p-6 space-y-4">
-                {/* Form Fields Mock */}
-                <div>
-                  <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "11px", fontWeight: 600, letterSpacing: "0.5px", marginBottom: "6px" }}>
-                    SELECT SERVICE
-                  </p>
-                  <div
-                    className="px-4 py-3 rounded-lg flex items-center justify-between"
-                    style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(72,202,228,0.4)" }}
-                  >
-                    <span style={{ color: "white", fontSize: "14px" }}>Private Limited Company</span>
-                    <div className="w-4 h-4 rounded-full" style={{ background: "#48cae4" }} />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    { icon: <Clock size={14} />, label: "Processing Time", value: "2–7 Days" },
-                    { icon: <Award size={14} />, label: "Govt Approved", value: "100%" },
-                    { icon: <Users size={14} />, label: "Expert Support", value: "Dedicated" },
-                    { icon: <CheckCircle size={14} />, label: "Compliance", value: "Guaranteed" },
-                  ].map((item) => (
-                    <div
-                      key={item.label}
-                      className="px-4 py-3 rounded-xl"
-                      style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.1)" }}
-                    >
-                      <div className="flex items-center gap-1.5 mb-1" style={{ color: "#48cae4" }}>
-                        {item.icon}
-                        <span style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.3px", color: "rgba(255,255,255,0.5)" }}>
-                          {item.label}
-                        </span>
-                      </div>
-                      <p style={{ color: "white", fontSize: "14px", fontWeight: 700 }}>{item.value}</p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Services Checklist */}
-                <div
-                  className="rounded-xl p-4 space-y-2.5"
-                  style={{ background: "rgba(0,119,182,0.2)", border: "1px solid rgba(0,180,216,0.3)" }}
-                >
-                  {[
-                    "DIN & DSC Generation",
-                    "Name Approval (MCA)",
-                    "MOA & AOA Drafting",
-                    "Certificate of Incorporation",
-                    "PAN & TAN Registration",
-                  ].map((step, i) => (
-                    <div key={step} className="flex items-center gap-2.5">
-                      <div
-                        className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
-                        style={{ background: i < 3 ? "#00b4d8" : "rgba(255,255,255,0.15)" }}
-                      >
-                        {i < 3 ? (
-                          <CheckCircle size={11} color="white" />
-                        ) : (
-                          <div className="w-1.5 h-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.4)" }} />
-                        )}
-                      </div>
-                      <span style={{ color: i < 3 ? "white" : "rgba(255,255,255,0.5)", fontSize: "13px", fontWeight: 500 }}>
-                        {step}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                <button
-                  className="w-full py-3 rounded-xl text-white text-sm"
-                  style={{
-                    background: "#f77f00",
-                    fontWeight: 700,
-                  }}
-                >
-                  Start My Registration →
-                </button>
-              </div>
-            </div>
+          <div className="hidden lg:block relative rounded-2xl overflow-hidden shadow-2xl group">
+            {/* Themed Image */}
+            <img
+              src="/hero.png"
+              alt="Business Registration and Certification"
+              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+            />
           </div>
         </div>
 
