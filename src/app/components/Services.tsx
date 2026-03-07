@@ -78,18 +78,6 @@ const services = [
     starting: "₹1,999",
     href: "/services/gem-registration"
   },
-  {
-    icon: FileText,
-    title: "GST REGISTRATION",
-    shortTitle: "GST",
-    badge: "Mandatory",
-    badgeColor: "#f77f00",
-    description: "Get your GSTIN quickly and stay fully compliant. We handle GST registration, profile updates, filing, and advisory for all businesses.",
-    features: ["GSTIN Allotment", "State/Central Level", "E-way Bill Setup", "LUT Filing"],
-    timeline: "2–3 Working Days",
-    starting: "₹1,499",
-    href: "#contact"
-  },
   // SET 2
   {
     icon: Award,
@@ -166,6 +154,7 @@ const services = [
 ];
 
 import { useNavigate } from "react-router";
+import { useEffect } from "react";
 
 function ServiceCard({ service }: { service: (typeof services)[0] }) {
   const [hovered, setHovered] = useState(false);
@@ -296,8 +285,19 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
 
 export function Services() {
   const [currentPage, setCurrentPage] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const itemsPerPage = 6;
   const totalPages = Math.ceil(services.length / itemsPerPage);
+
+  useEffect(() => {
+    if (isHovered) return;
+
+    const intervalId = setInterval(() => {
+      setCurrentPage((prev) => (prev + 1) % totalPages);
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, [isHovered, totalPages]);
 
   const displayedServices = services.slice(
     currentPage * itemsPerPage,
@@ -317,7 +317,12 @@ export function Services() {
   };
 
   return (
-    <section id="services" style={{ background: "#f0f9ff", paddingTop: "80px", paddingBottom: "80px" }}>
+    <section
+      id="services"
+      style={{ background: "#f0f9ff", paddingTop: "80px", paddingBottom: "80px" }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-14">

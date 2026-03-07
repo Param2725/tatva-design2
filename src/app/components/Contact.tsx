@@ -6,8 +6,6 @@ const services = [
   "LLP Registration",
   "One Person Company (OPC)",
   "Partnership Firm",
-  "GST Registration",
-  "GST Return Filing",
   "ISO Certification",
   "Trademark Registration",
   "MSME / Udyam Registration",

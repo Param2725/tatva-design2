@@ -136,7 +136,7 @@ export default function AboutUs() {
                                     Established in the year <strong style={{ color: "#03045e" }}>2022 in Ahmedabad (Gujarat, India)</strong>, we, <strong style={{ color: "#03045e" }}>"Tatva Registration & Certification Services Pvt. Ltd."</strong>, are engaged in providing a wide range of compliance and certification services.
                                 </p>
                                 <p>
-                                    Our offerings include <strong style={{ color: "#0077b6" }}>MSME Certification, ISO Certification, Trademark Registration, Company Registration, GST Registration, Startup India Registration, GeM Registration</strong>, and many more. We have a team of trained and skilled professionals with deep expertise in their respective domains.
+                                    Our offerings include <strong style={{ color: "#0077b6" }}>MSME Certification, ISO Certification, Trademark Registration, Company Registration, Startup India Registration, GeM Registration</strong>, and many more. We have a team of trained and skilled professionals with deep expertise in their respective domains.
                                 </p>
                                 <p>
                                     We specialize in compliance and government certification services and also conduct <strong style={{ color: "#03045e" }}>seminars in industrial areas</strong> to raise awareness about corporate governance and government benefits available to MSMEs.

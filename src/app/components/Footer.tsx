@@ -4,7 +4,6 @@ import { useNavigate, useLocation } from "react-router";
 const services = [
   { name: "Company Registration", href: "/services/company-registration" },
   { name: "LLP Registration", href: "/services/llp-registration" },
-  { name: "GST Registration", href: "/services/gst-registration" },
   { name: "ISO Certification", href: "/services/iso-certification" },
   { name: "Trademark Registration", href: "/services/trademark-registration" },
   { name: "MSME Registration", href: "/services/msme-registration" },

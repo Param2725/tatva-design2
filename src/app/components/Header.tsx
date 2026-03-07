@@ -63,7 +63,7 @@ export function Header() {
                 className="font-serif font-black tracking-[0.05em] leading-none transition-colors duration-300"
                 style={{
                   fontSize: "clamp(1.5rem, 4vw, 2.2rem)",
-                  color: isScrolled ? "white" : "#48cae4",
+                  color: "white",
                   textShadow: "0 2px 10px rgba(0,0,0,0.1)",
                 }}
               >
@@ -73,7 +73,7 @@ export function Header() {
                 className="font-serif ml-0.5"
                 style={{
                   fontSize: "clamp(0.6rem, 1.5vw, 0.9rem)",
-                  color: isScrolled ? "white" : "#48cae4",
+                  color: "white",
                   lineHeight: 1,
                   marginTop: "0.2rem"
                 }}

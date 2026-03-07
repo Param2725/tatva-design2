@@ -14,10 +14,9 @@ export function Hero() {
   ];
 
   const highlights = [
-    "Company & LLP Registration",
-    "GST & Tax Compliance",
-    "Trademark & ISO Certification",
-    "MSME & Startup India Registration",
+    "Startup India Registration",
+    "ISO Certifications",
+    "Trademark Registration"
   ];
 
   return (

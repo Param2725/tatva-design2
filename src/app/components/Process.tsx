@@ -26,7 +26,7 @@ const steps = [
     icon: Send,
     title: "Filing & Submission",
     description:
-      "Our professionals prepare and file all applications with the relevant authorities — MCA, GSTIN, Trade Marks Registry, and more.",
+      "Our professionals prepare and file all applications with the relevant authorities — MCA, Trade Marks Registry, and more.",
     details: ["Government portal filing", "Application tracking", "Query resolution", "Real-time status updates"],
     color: "#00b4d8",
     lightColor: "#e0faf9",

@@ -21,7 +21,7 @@ const slides = [
     eyebrow: "Legal & Compliance",
     caption: "Fast, compliant business registration",
     sub: "Every document filed precisely — from MOA drafting to government submission. Zero rejections, full accuracy.",
-    tag: "GST & Trademark",
+    tag: "ISO & Trademark",
     overlayColor: "rgba(2, 62, 138, 0.44)",
     accentColor: "#0096c7",
   },

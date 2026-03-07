@@ -48,7 +48,7 @@ export function FloatingCTA() {
               Get Free Consultation
             </p>
             <p style={{ color: "#6b7280", fontSize: "12.5px", lineHeight: 1.5, marginBottom: "14px" }}>
-              Talk to our expert about company registration, GST, trademark & more.
+              Talk to our expert about company registration, MSME, trademark & more.
             </p>
             <div className="flex flex-col gap-2.5">
               <button
