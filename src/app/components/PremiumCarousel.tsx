@@ -17,35 +17,35 @@ const carouselData = [
         src: "/carousel/business-registration.png",
         mobileSrc: "/carousel/mobile/business-registration.png",
         alt: "Business Registration Services",
-        seoText: "Complete business registration services from Private Limited Company to OPC and LLP."
+        seoText: "Business Registration Services."
     },
     {
         id: 2,
         src: "/carousel/trademark.png",
         mobileSrc: "/carousel/mobile/trademark.png",
         alt: "Trademark Registration Process",
-        seoText: "Streamlined 6-step trademark registration process to protect your brand identity."
+        seoText: "Streamlined 6-step Trademark Registration Process To Protect Your Brand Identity."
     },
     {
         id: 3,
         src: "/carousel/iso.png",
         mobileSrc: "/carousel/mobile/iso.png",
         alt: "ISO & Compliance Certifications",
-        seoText: "Comprehensive ISO and compliance certifications for quality and security management."
+        seoText: "Comprehensive ISO and Compliance Certifications For Quality and Security Management."
     },
     {
         id: 4,
         src: "/carousel/gem.png",
         mobileSrc: "/carousel/mobile/gem.png",
         alt: "GeM Registration Online Service Provider",
-        seoText: "End-to-end GeM portal registration and online service provider solutions."
+        seoText: "End-To-End GeM Portal Registration And Online Service Provider Solutions."
     },
     {
         id: 5,
         src: "/carousel/iem.png",
         mobileSrc: "/carousel/mobile/iem.png",
         alt: "One Stop Solution For IEM Registration",
-        seoText: "One-stop solution for complete IEM registration and continuous expert support."
+        seoText: "One-Stop Solution For Complete IEM Registration And Continuous Expert Support."
     }
 ];
 
