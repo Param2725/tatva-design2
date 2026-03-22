@@ -89,7 +89,7 @@ const services = [
     features: ["ISO 9001:2015", "CE Marking", "GMP Certification", "Quality Audits"],
     timeline: "7–15 Working Days",
     starting: "Custom Price",
-    href: "#contact"
+    href: "/services/iso-certification"
   },
   {
     icon: ShieldCheck,
@@ -101,7 +101,7 @@ const services = [
     features: ["Single Point Reg", "EMD Exemption", "Tender Fee Waiver", "Credit Support"],
     timeline: "15–20 Working Days",
     starting: "Custom Price",
-    href: "#contact"
+    href: "/services/nsic-registration"
   },
   {
     icon: Briefcase,
@@ -113,7 +113,7 @@ const services = [
     features: ["Part A (Intent)", "Part B (Commencement)", "SIA Registration", "Amendment of IEM"],
     timeline: "3–5 Working Days",
     starting: "Custom Price",
-    href: "#contact"
+    href: "/services/iem-registration"
   },
   {
     icon: Building2,
