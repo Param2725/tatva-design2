@@ -12,6 +12,8 @@ import GeMRegistration from "./pages/services/GeMRegistration";
 import ISOCertification from "./pages/services/ISOCertification";
 import NSICRegistration from "./pages/services/NSICRegistration";
 import IEMRegistration from "./pages/services/IEMRegistration";
+import RBRegistration from "./pages/services/RBRegistration";
+import LoansSubsidy from "./pages/services/LoansSubsidy";
 
 export default function App() {
   return (
@@ -36,6 +38,8 @@ export default function App() {
         <Route path="/services/iso-certification" element={<ISOCertification />} />
         <Route path="/services/nsic-registration" element={<NSICRegistration />} />
         <Route path="/services/iem-registration" element={<IEMRegistration />} />
+        <Route path="/services/rb-registration" element={<RBRegistration />} />
+        <Route path="/services/loans-subsidy" element={<LoansSubsidy />} />
       </Routes>
       <Footer />
       <FloatingCTA />

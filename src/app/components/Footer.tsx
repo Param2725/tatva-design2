@@ -10,8 +10,8 @@ const services = [
   { name: "ISO / CE / GMP Certification", href: "/services/iso-certification" },
   { name: "NSIC - CSPO Certificate", href: "/services/nsic-registration" },
   { name: "IEM Registration", href: "/services/iem-registration" },
-  { name: "R&B Approval", href: "#contact" },
-  { name: "Loans & Subsidy", href: "#contact" },
+  { name: "R&B Approval", href: "/services/rb-registration" },
+  { name: "Loans & Subsidy", href: "/services/loans-subsidy" },
   { name: "Factory Act Licence", href: "#contact" },
   { name: "GPCB / BIS / IBR / EIL", href: "#contact" },
 ];

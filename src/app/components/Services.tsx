@@ -125,7 +125,7 @@ const services = [
     features: ["Class Registration", "Document Prep", "Renewal & Upgrade", "Govt Liaison"],
     timeline: "20–30 Working Days",
     starting: "Custom Price",
-    href: "#contact"
+    href: "/services/rb-registration"
   },
   {
     icon: Landmark,
@@ -137,7 +137,7 @@ const services = [
     features: ["Project Reports", "CMA Data Prep", "CGFMSE Loans", "State Subsidies"],
     timeline: "Variable",
     starting: "Custom Price",
-    href: "#contact"
+    href: "/services/loans-subsidy"
   },
   {
     icon: Factory,
