@@ -14,6 +14,8 @@ import NSICRegistration from "./pages/services/NSICRegistration";
 import IEMRegistration from "./pages/services/IEMRegistration";
 import RBRegistration from "./pages/services/RBRegistration";
 import LoansSubsidy from "./pages/services/LoansSubsidy";
+import FactoryActLicence from "./pages/services/FactoryActLicence";
+import IndustrialCompliance from "./pages/services/IndustrialCompliance";
 
 export default function App() {
   return (
@@ -40,6 +42,8 @@ export default function App() {
         <Route path="/services/iem-registration" element={<IEMRegistration />} />
         <Route path="/services/rb-registration" element={<RBRegistration />} />
         <Route path="/services/loans-subsidy" element={<LoansSubsidy />} />
+        <Route path="/services/factory-act-licence" element={<FactoryActLicence />} />
+        <Route path="/services/industrial-compliance" element={<IndustrialCompliance />} />
       </Routes>
       <Footer />
       <FloatingCTA />

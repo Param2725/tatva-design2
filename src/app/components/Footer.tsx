@@ -12,8 +12,8 @@ const services = [
   { name: "IEM Registration", href: "/services/iem-registration" },
   { name: "R&B Approval", href: "/services/rb-registration" },
   { name: "Loans & Subsidy", href: "/services/loans-subsidy" },
-  { name: "Factory Act Licence", href: "#contact" },
-  { name: "GPCB / BIS / IBR / EIL", href: "#contact" },
+  { name: "Factory Act Licence", href: "/services/factory-act-licence" },
+  { name: "GPCB / BIS / IBR / EIL", href: "/services/industrial-compliance" },
 ];
 
 const quickLinks = [

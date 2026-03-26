@@ -149,7 +149,7 @@ const services = [
     features: ["Factory License", "Plan Approval", "License Renewal", "Compliance Support"],
     timeline: "Variable",
     starting: "Custom Price",
-    href: "#contact"
+    href: "/services/factory-act-licence"
   },
   {
     icon: Cog,
@@ -161,7 +161,7 @@ const services = [
     features: ["GPCB CTE/CCA", "BIS Certification", "IBR & EIL", "Credit Rating Prep"],
     timeline: "Variable",
     starting: "Custom Price",
-    href: "#contact"
+    href: "/services/industrial-compliance"
   }
 ];
 
