@@ -55,7 +55,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             {/* Logo */}
-            <div className="mb-5 flex flex-col items-start">
+            <div className="mb-5 flex flex-col items-center" style={{ width: "fit-content" }}>
               <div className="relative flex items-start">
                 <span
                   className="font-serif font-black tracking-[0.05em] leading-none"

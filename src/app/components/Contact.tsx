@@ -37,10 +37,21 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+
+    const text = `*Website Inquirey*
+*Name:* ${form.name}
+*Phone:* ${form.phone}
+*Email:* ${form.email}
+*Service:* ${form.service}
+*Message:* ${form.message || "N/A"}`;
+    
+    const whatsappUrl = `https://wa.me/919825310954?text=${encodeURIComponent(text)}`;
+
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-    }, 1500);
+      window.open(whatsappUrl, "_blank");
+    }, 800);
   };
 
   const contactInfo = [

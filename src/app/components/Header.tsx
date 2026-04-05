@@ -56,7 +56,7 @@ export function Header() {
           {/* Logo */}
           <button
             onClick={() => handleNavClick("#home")}
-            className="flex flex-col items-start flex-shrink-0 group relative"
+            className="flex flex-col items-center flex-shrink-0 group relative"
           >
             <div className="relative flex items-start">
               <span
