@@ -139,7 +139,7 @@ export function Footer() {
               >
                 <MapPin size={14} style={{ color: "#48cae4", marginTop: "2px", flexShrink: 0 }} />
                 <span style={{ color: "rgba(255,255,255,0.75)", fontSize: "13.5px" }}>
-                  Ahmedabad, Gujarat
+                  10th Floor, I-Square Corporate Park, 1007, Science City Rd, nr. Shukan Mall, Panchamrut Bunglows II, Sola, Ahmedabad, Gujarat 380060
                 </span>
               </a>
             </div>

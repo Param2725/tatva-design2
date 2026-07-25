@@ -76,7 +76,7 @@ export function Contact() {
     {
       icon: MapPin,
       label: "Office",
-      value: "Ahmedabad, Gujarat",
+      value: "10th Floor, I-Square Corporate Park, 1007, Science City Rd, nr. Shukan Mall, Panchamrut Bunglows II, Sola, Ahmedabad, Gujarat 380060",
       href: "https://maps.app.goo.gl/Z2TjydDZhWUBLQxS6",
     },
     {

@@ -25,7 +25,7 @@ export function About() {
     "Regular updates at every step of the process",
     "Post-registration compliance support included",
     "Secure digital document handling",
-    "Based in Ahmedabad, Gujarat",
+    "Based in 10th Floor, I-Square Corporate Park, 1007, Science City Rd, nr. Shukan Mall, Panchamrut Bunglows II, Sola, Ahmedabad, Gujarat 380060",
   ];
 
   return (

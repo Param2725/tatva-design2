@@ -13,4 +13,10 @@ psd
 thumb
 sketch
 
+.env
+
+# Admin backend
+admin-backend/.env
+admin-backend/node_modules
+
 # End of https://mrkandreev.name/snippets/gitignore-generator/#react

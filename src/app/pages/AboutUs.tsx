@@ -260,7 +260,7 @@ export default function AboutUs() {
                                     <div>
                                         <p className="text-sm font-bold mb-1" style={{ color: "#03045e" }}>Address</p>
                                         <p className="text-gray-600 text-sm leading-relaxed group-hover:text-blue-600 transition-colors">
-                                            1007, I Square Corporate Park, Shukan Mall Cross Road, Science City Road, Sola, Ahmedabad 380060
+                                            10th Floor, I-Square Corporate Park, 1007, Science City Rd, nr. Shukan Mall, Panchamrut Bunglows II, Sola, Ahmedabad, Gujarat 380060
                                         </p>
                                     </div>
                                 </a>
