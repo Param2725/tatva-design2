@@ -43,7 +43,7 @@ const visitSchema = new mongoose.Schema({
 // Indexes for fast aggregation queries
 visitSchema.index({ timestamp: -1 });
 visitSchema.index({ ip: 1 });
-visitSchema.index({ country: 1 });
+visitSchema.index({ city: 1 });
 visitSchema.index({ page: 1 });
 visitSchema.index({ device: 1 });
 

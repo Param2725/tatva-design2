@@ -9,7 +9,7 @@ router.use(verifyToken);
 /**
  * GET /api/admin/stats
  * Overview statistics: total visits, unique visitors,
- * today/yesterday counts, top 5 countries.
+ * today/yesterday counts, top 10 cities.
  */
 router.get('/stats', async (req, res) => {
   try {
@@ -18,7 +18,7 @@ router.get('/stats', async (req, res) => {
     const yesterdayStart = new Date(todayStart);
     yesterdayStart.setDate(yesterdayStart.getDate() - 1);
 
-    const [totalVisits, uniqueVisitors, todayVisits, yesterdayVisits, topCountries] =
+    const [totalVisits, uniqueVisitors, todayVisits, yesterdayVisits, topCities] =
       await Promise.all([
         // Total visits
         Visit.countDocuments(),
@@ -34,12 +34,12 @@ router.get('/stats', async (req, res) => {
           timestamp: { $gte: yesterdayStart, $lt: todayStart },
         }),
 
-        // Top 5 countries
+        // Top 10 cities
         Visit.aggregate([
-          { $group: { _id: '$country', count: { $sum: 1 } } },
+          { $group: { _id: '$city', count: { $sum: 1 } } },
           { $sort: { count: -1 } },
-          { $limit: 5 },
-          { $project: { country: '$_id', count: 1, _id: 0 } },
+          { $limit: 10 },
+          { $project: { city: '$_id', count: 1, _id: 0 } },
         ]),
       ]);
 
@@ -48,7 +48,7 @@ router.get('/stats', async (req, res) => {
       uniqueVisitors,
       todayVisits,
       yesterdayVisits,
-      topCountries,
+      topCities,
     });
   } catch (err) {
     console.error('Stats error:', err.message);
@@ -56,33 +56,7 @@ router.get('/stats', async (req, res) => {
   }
 });
 
-/**
- * GET /api/admin/geography
- * Visits aggregated by country and city.
- */
-router.get('/geography', async (req, res) => {
-  try {
-    const [byCountry, byCity] = await Promise.all([
-      Visit.aggregate([
-        { $group: { _id: '$country', count: { $sum: 1 } } },
-        { $sort: { count: -1 } },
-        { $limit: 15 },
-        { $project: { country: '$_id', count: 1, _id: 0 } },
-      ]),
-      Visit.aggregate([
-        { $group: { _id: '$city', count: { $sum: 1 } } },
-        { $sort: { count: -1 } },
-        { $limit: 15 },
-        { $project: { city: '$_id', count: 1, _id: 0 } },
-      ]),
-    ]);
 
-    res.json({ byCountry, byCity });
-  } catch (err) {
-    console.error('Geography error:', err.message);
-    res.status(500).json({ error: 'Failed to fetch geography data' });
-  }
-});
 
 /**
  * GET /api/admin/pages
