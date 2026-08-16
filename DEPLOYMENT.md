@@ -27,6 +27,19 @@ When deploying the Express backend (e.g. Render, Railway, AWS EC2, DigitalOcean,
 | `MONGODB_URI` | MongoDB Atlas Connection String | `mongodb+srv://...` |
 | `ALLOWED_ORIGIN` | Comma-separated list of allowed origins for CORS | `https://tatvaconsultancy.in,https://www.tatvaconsultancy.in` |
 
+### Available Endpoints
+| Endpoint | Method | Auth | Description |
+|---|---|---|---|
+| `/api/login` | POST | ❌ | Returns access token + refresh cookie |
+| `/api/refresh` | POST | ❌ (cookie) | Returns new access token |
+| `/api/logout` | POST | ❌ | Clears refresh cookie |
+| `/api/admin/stats` | GET | ✅ Bearer | Returns overall metrics & top 10 cities |
+| `/api/admin/timeline` | GET | ✅ Bearer | Returns 30-day visit counts |
+| `/api/admin/pages` | GET | ✅ Bearer | Returns top visited pages |
+| `/api/admin/devices` | GET | ✅ Bearer | Returns device & browser distributions |
+| `/api/admin/live` | GET | ✅ Bearer | Returns recent 20 visits |
+| `/api/admin/export` | GET | ✅ Bearer | Downloads CSV or PDF report of monthly analytics (`?format=csv` or `?format=pdf`) |
+
 > [!CRITICAL]
 > **CORS & Cookies**: In `production`, Express sets `secure: true` and `sameSite: 'none'` on the refresh token cookie. For cross-domain cookies to work (if backend is on a separate domain like `api.tatvaconsultancy.in`), the backend **MUST** run over HTTPS.
 

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Outlet, NavLink, useLocation } from 'react-router';
 import { useAuth } from './AuthContext';
+import { exportReport } from './api';
 
 /** SVG icon components kept inline for zero-dependency simplicity */
 function IconDashboard() {
@@ -36,6 +37,16 @@ function IconLogout() {
   );
 }
 
+function IconDownload() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </svg>
+  );
+}
+
 function IconMenu() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -66,11 +77,24 @@ export default function AdminLayout() {
   const { logout } = useAuth();
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [exportingFormat, setExportingFormat] = useState<'csv' | 'pdf' | null>(null);
 
   const pageTitle = PAGE_TITLES[location.pathname] || 'Dashboard';
 
   async function handleLogout() {
     await logout();
+  }
+
+  async function handleExport(format: 'csv' | 'pdf') {
+    try {
+      setExportingFormat(format);
+      await exportReport(format);
+    } catch (err) {
+      console.error('Failed to export report', err);
+      alert('Could not export report. Please try again.');
+    } finally {
+      setExportingFormat(null);
+    }
   }
 
   return (
@@ -141,6 +165,24 @@ export default function AdminLayout() {
               <span className="admin-refresh-dot" />
               Auto-refresh: 1 min
             </div>
+            <button
+              className="admin-topbar-btn"
+              onClick={() => handleExport('csv')}
+              disabled={!!exportingFormat}
+              title="Download Monthly CSV Report"
+            >
+              <IconDownload />
+              {exportingFormat === 'csv' ? 'CSV...' : 'Export CSV'}
+            </button>
+            <button
+              className="admin-topbar-btn"
+              onClick={() => handleExport('pdf')}
+              disabled={!!exportingFormat}
+              title="Download Monthly PDF Report"
+            >
+              <IconDownload />
+              {exportingFormat === 'pdf' ? 'PDF...' : 'Export PDF'}
+            </button>
             <button className="admin-topbar-btn" onClick={handleLogout}>
               <IconLogout />
               Logout

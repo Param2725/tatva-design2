@@ -125,3 +125,40 @@ export async function fetchTimeline(): Promise<TimelineData> {
 export async function fetchLive(): Promise<LiveData> {
   return apiFetch<LiveData>('/admin/live');
 }
+
+export async function exportReport(format: 'csv' | 'pdf' = 'csv'): Promise<void> {
+  const headers: Record<string, string> = {};
+  if (accessToken) {
+    headers['Authorization'] = `Bearer ${accessToken}`;
+  }
+
+  let res = await fetch(`${API_BASE}/admin/export?format=${format}`, {
+    headers,
+    credentials: 'include',
+  });
+
+  if (res.status === 401 && accessToken) {
+    const newToken = await refreshAccessToken();
+    if (newToken) {
+      headers['Authorization'] = `Bearer ${newToken}`;
+      res = await fetch(`${API_BASE}/admin/export?format=${format}`, {
+        headers,
+        credentials: 'include',
+      });
+    }
+  }
+
+  if (!res.ok) {
+    throw new Error('Failed to download report');
+  }
+
+  const blob = await res.blob();
+  const url = window.URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `analytics-report-30-days-${new Date().toISOString().split('T')[0]}.${format}`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  window.URL.revokeObjectURL(url);
+}
